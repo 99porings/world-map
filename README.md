@@ -8,4 +8,4 @@
 - Decreased town-name font-size to 12px
 
 - Changed overlay justify-content to space-between
-- Added 5px margin bottom on map indicators
+- Added 5px margin bottom on map-indicators
