@@ -1,0 +1,57 @@
+<!-- 
+
+###SECTION
+
+													<!-- SECTION DIVIDER -->
+
+	<div class='section'>
+	
+		<div class='maps yuno portal-bottom'>
+			<div class='overlay'>
+				<a href='#' class='town-name'>Juno</a>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+		
+	</div>	
+
+###MAP ICONS
+				<div class='map-indicators'>
+					<div class='boss-icon'></div>
+				</div>
+				
+				<div class='map-indicators'>
+					<div class='miniboss-icon'></div>
+				</div>
+				
+				<div class='map-indicators'>
+					<div class='dungeon-icon'></div>
+				</div>
+				
+###MONSTER COUNT 
+				<div class='tooltip'>
+					<div class='tooltip-header'></div>
+					<div class='tooltip-body'>
+						<div class=''>
+						<p class='tooltip-text'>10 Green Plant</p>
+						<p class='tooltip-text'>10 Red Plant</p>
+						<p class='tooltip-text'>10 Yellow Plant</p>
+						<p class='tooltip-text'>20 Demon Pungus</p>
+						<p class='tooltip-text'>40 Goat</p>
+						<p class='tooltip-text'>70 Sleeper</p>
+						</div>
+					</div>
+				</div>
+				
+###NOT IMPLEMENTED YET
+				<div class='tooltip'>
+					<div class='tooltip-header'></div>
+					<div class='tooltip-body'>
+						<div class=''>
+						<p class='tooltip-text center'>Not implemented yet</p>
+						</div>
+					</div>
+				</div>
+				
+-->

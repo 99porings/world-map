@@ -1,0 +1,246 @@
+html {
+	cursor: url('cursor/mainc.png'), auto;	
+}
+
+body {
+	margin:0;
+	padding:0;
+}
+
+/* CONTAINERS */
+.inner-body {
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	border:1px solid green;
+}
+
+.section-container {
+	width:100%;height:100%;
+	border:1px solid blue;
+}
+
+.section {
+	display:flex;
+	height:60px;
+	
+}
+/* CONTAINERS */
+
+/* STANDARD ELEMENTS */
+.maps {
+	width:56px;height:56px;
+	margin:2px;
+	position:relative;
+	background: #222222;
+}
+
+.portal-right:before {
+	content:'';
+    width:4px;height:10px;
+    background:#222;
+    position:absolute;
+    right:-4px;
+    top:23px;
+}
+
+.portal-bottom:after {
+	content:'';
+    width:10px;height:4px;
+    background:#222;
+    position:absolute;
+    bottom:-4px;left:23px;
+}
+
+.overlay {
+	width:56px;height:56px;
+	position:relative;
+	background:rgba(255,0,0,0);
+	display:flex;
+	flex-direction:column;
+	align-items:space-around;
+	justify-content:center;
+}
+
+.overlay:hover{
+	box-shadow:0 0 15px yellow inset;
+}
+
+		.overlay:hover .tooltip {
+			display:block;
+		}
+
+a {
+	text-decoration:none;
+	cursor: url('cursor/linkc.png'), auto;
+	text-shadow: 0px 0px 3px #000, 0px 0px 2px #000, 0px 0px 1px #000;
+}
+a:active {cursor: url('cursor/activec.png'), auto;}
+
+.a-icon {
+	text-shadow: none;
+}
+.a-icon:active {
+	color:#000;
+}
+
+.town-name {
+	font-family:sans-serif;
+	font-size:12px;
+	text-align:center;
+	color:yellow;
+	margin:0;
+}
+
+.field-name {
+	font-family:sans-serif;
+	text-align:center;
+	font-size:12px;
+	color:white;
+	margin:0;
+}
+
+.tooltip-text {
+	font-family:sans-serif;
+	text-align:left;
+	font-size:12px;
+	margin:0;
+	text-indent:3px;
+}
+.tooltip-text:hover {background:#ffe4b3;}
+
+/* STANDARD ELEMENTS */
+
+/* MAP INDICATORS */
+.map-indicators {
+	display:flex;
+	justify-content:space-around;
+}
+
+.boss-icon {
+	width:10px;height:10px;
+    border-radius:50%;
+    background:linear-gradient(white 1%, red 70%, white 110%);
+    position:relative;
+	cursor: url('cursor/qmc.png'), auto;
+}
+		.boss-icon:hover .tooltip {
+			display:block;
+		}
+		.boss-icon:active {cursor: url('cursor/activec.png'), auto;}
+		
+.miniboss-icon {
+	width:10px;height:10px;
+    border-radius:50%;
+    background:linear-gradient(white 1%, pink 70%, white 110%);
+    position:relative;
+	cursor: url('cursor/qmc.png'), auto;
+}
+		.miniboss-icon:hover .tooltip {
+			display:block;
+		}
+		.miniboss-icon:active {cursor: url('cursor/activec.png'), auto;}
+
+.dungeon-icon {
+	width:10px;height:10px;
+    border-radius:50%;
+    background:linear-gradient(white 1%, blue 70%, white 110%);
+    position:relative;
+	cursor: url('cursor/qmc.png'), auto;
+}
+		.dungeon-icon:hover .tooltip {
+			display:block;
+		}
+		.dungeon-icon:active {cursor: url('cursor/activec.png'), auto;}
+/* MAP INDICATORS */
+
+/* TOOLTIPS */
+.tooltip {
+	width:110px;
+	
+    display:none;
+    z-index:1;
+    position:absolute;
+    left:50px;top:50px;
+}
+
+.tooltip-header {
+	width:100%;height:15px;
+    background:linear-gradient(white 1%, #adc1eb 20%, white 110%);
+    border-top-left-radius:5px;
+    border-top-right-radius:5px;
+    border:1px solid #adc1eb;
+    z-index:1;
+}
+.tooltip-body {
+	border:1px solid gray;
+	border-top:1px solid transparent;
+	border-bottom-left-radius:3px;
+	border-bottom-right-radius:3px;
+    width:100%;
+    z-index:1;
+    background:white;
+	text-align:center;
+}
+
+.bgred {background:rgb(255, 128, 128)}
+.bgpink {background:rgb(255, 204, 213)}
+.bgblue {background:rgb(204, 204, 255)}
+/* TOOLTIPS */
+
+/* OTHER CODES */
+.center {text-align:center;}
+/* OTHER CODES */
+
+/* MAPS REQUEST */
+.yuno{background-image: url(maps/56px/yuno.png);}
+.yuno_fild06{background-image: url(maps/56px/yuno_fild06.png);}
+
+.ein_fild01{background-image: url(maps/56px/ein_fild01.png);}
+.yuno_fild04{background-image: url(maps/56px/yuno_fild04.png);}
+.yuno_fild03{background-image: url(maps/56px/yuno_fild03.png);}
+.yuno_fild02{background-image: url(maps/56px/yuno_fild02.png);}
+
+.ein_fild03{background-image: url(maps/56px/ein_fild03.png);}
+.ein_fild04{background-image: url(maps/56px/ein_fild04.png);}
+.ein_fild05{background-image: url(maps/56px/ein_fild05.png);}
+.ein_fild06{background-image: url(maps/56px/ein_fild06.png);}
+.yuno_fild07{background-image: url(maps/56px/yuno_fild07.png);}
+.yuno_fild08{background-image: url(maps/56px/yuno_fild08.png);}
+.yuno_fild09{background-image: url(maps/56px/yuno_fild09.png);}
+
+.lhz_fild01{background-image: url(maps/56px/lhz_fild01.png);}
+.lhz_fild02{background-image: url(maps/56px/lhz_fild02.png);}
+.einbroch{background-image: url(maps/56px/einbroch.png);}
+.einbech{background-image: url(maps/56px/einbech.png);}
+.ein_fild07{background-image: url(maps/56px/ein_fild07.png);}
+.yuno_fild11{background-image: url(maps/56px/yuno_fild11.png);}
+.yuno_fild12{background-image: url(maps/56px/yuno_fild12.png);}
+.yuno_fild01{background-image: url(maps/56px/yuno_fild01.png);}
+.xmas{background-image: url(maps/56px/xmas.png);}
+.ama_fild01{background-image: url(maps/56px/ama_fild01.png);}
+.gonryun{background-image: url(maps/56px/gonryun.png);}
+.louyang{background-image: url(maps/56px/louyang.png);}
+
+.lighthalzen{background-image: url(maps/56px/lighthalzen.png);}
+.lhz_fild03{background-image: url(maps/56px/lhz_fild03.png);}
+.ein_fild08{background-image: url(maps/56px/ein_fild08.png);}
+.ein_fild09{background-image: url(maps/56px/ein_fild09.png);}
+.alde_gld{background-image: url(maps/56px/alde_gld.png);}
+.aldebaran{background-image: url(maps/56px/aldebaran.png);}
+.xmas_fild01{background-image: url(maps/56px/xmas_fild01.png);}
+.amatsu{background-image: url(maps/56px/amatsu.png);}
+.gon_fild01{background-image: url(maps/56px/gon_fild01.png);}
+.lou_fild01{background-image: url(maps/56px/lou_fild01.png);}
+
+.mjolnir_12{background-image: url(maps/56px/mjolnir_12.png);}
+.ayothaya{background-image: url(maps/56px/ayothaya.png);}
+.ayo_fild01{background-image: url(maps/56px/ayo_fild01.png);}
+.ayo_fild02{background-image: url(maps/56px/ayo_fild02.png);}
+
+.mjolnir_01{background-image: url(maps/56px/mjolnir_01.png);}
+.mjolnir_02{background-image: url(maps/56px/mjolnir_02.png);}
+.mjolnir_03{background-image: url(maps/56px/mjolnir_03.png);}
+.mjolnir_04{background-image: url(maps/56px/mjolnir_04.png);}
+.mjolnir_05{background-image: url(maps/56px/mjolnir_05.png);}
+/* MAPS REQUEST */
