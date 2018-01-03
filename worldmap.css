@@ -59,7 +59,7 @@ body {
 	display:flex;
 	flex-direction:column;
 	align-items:space-around;
-	justify-content:center;
+	justify-content:space-between;
 }
 
 .overlay:hover{
@@ -95,7 +95,7 @@ a:active {cursor: url('cursor/activec.png'), auto;}
 .field-name {
 	font-family:sans-serif;
 	text-align:center;
-	font-size:12px;
+	font-size:10px;
 	color:white;
 	margin:0;
 }
@@ -104,8 +104,7 @@ a:active {cursor: url('cursor/activec.png'), auto;}
 	font-family:sans-serif;
 	text-align:left;
 	font-size:12px;
-	margin:0;
-	text-indent:3px;
+	margin:0 0 0 3px;
 }
 .tooltip-text:hover {background:#ffe4b3;}
 
@@ -115,6 +114,7 @@ a:active {cursor: url('cursor/activec.png'), auto;}
 .map-indicators {
 	display:flex;
 	justify-content:space-around;
+	margin-bottom:5px;
 }
 
 .boss-icon {
@@ -152,6 +152,11 @@ a:active {cursor: url('cursor/activec.png'), auto;}
 			display:block;
 		}
 		.dungeon-icon:active {cursor: url('cursor/activec.png'), auto;}
+		
+@keyframes spin {
+	from {transform:rotate(0deg)}
+	to {transform:rotate(360deg)}
+}
 /* MAP INDICATORS */
 
 /* TOOLTIPS */
@@ -171,7 +176,18 @@ a:active {cursor: url('cursor/activec.png'), auto;}
     border-top-right-radius:5px;
     border:1px solid #adc1eb;
     z-index:1;
+	display:flex;
+	align-items:center;
 }
+	.header-icon {
+		display:inline-block;
+		width:8px;height:8px;
+		border:1px solid #4673d2;
+		border-radius:50%;
+		margin-left:2px;
+		background:linear-gradient(white 1%, rgb(91, 130, 215) 70%, white 110%);
+	}
+	
 .tooltip-body {
 	border:1px solid gray;
 	border-top:1px solid transparent;
