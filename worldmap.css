@@ -59,7 +59,7 @@ body {
 	display:flex;
 	flex-direction:column;
 	align-items:space-around;
-	justify-content:center;
+	justify-content:space-between;
 }
 
 .overlay:hover{
@@ -73,7 +73,7 @@ body {
 a {
 	text-decoration:none;
 	cursor: url('cursor/linkc.png'), auto;
-	text-shadow: 0px 0px 3px #000, 0px 0px 2px #000, 0px 0px 1px #000;
+	text-shadow: 0px 0px 4px #000, 0px 0px 3px #000, 0px 0px 2px #000, 0px 0px 1px #000;
 }
 a:active {cursor: url('cursor/activec.png'), auto;}
 
@@ -84,30 +84,47 @@ a:active {cursor: url('cursor/activec.png'), auto;}
 	color:#000;
 }
 
+.castle-name {
+	font-family:sans-serif;
+	font-size:12px;
+	text-align:center;
+	color:#ff00ff;
+	margin:2px 0 0 0;
+}
+
 .town-name {
 	font-family:sans-serif;
 	font-size:12px;
 	text-align:center;
 	color:yellow;
-	margin:0;
+	margin:2px 0 0 0;
+}
+.field-name-small {
+	font-family:sans-serif;
+	text-align:center;
+	font-size:10px;
+	color:white;
+	margin:2px 0 0 0;
 }
 
 .field-name {
 	font-family:sans-serif;
 	text-align:center;
-	font-size:12px;
+	font-size:11px;
 	color:white;
-	margin:0;
+	margin:2px 0 0 0;
 }
 
 .tooltip-text {
 	font-family:sans-serif;
 	text-align:left;
 	font-size:12px;
+	padding:0 0 0 3px;
 	margin:0;
-	text-indent:3px;
+	cursor: url('cursor/linkc.png'), auto;
 }
 .tooltip-text:hover {background:#ffe4b3;}
+.tooltip-text:active {cursor: url('cursor/activec.png'), auto;}
 
 /* STANDARD ELEMENTS */
 
@@ -115,6 +132,7 @@ a:active {cursor: url('cursor/activec.png'), auto;}
 .map-indicators {
 	display:flex;
 	justify-content:space-around;
+	margin-bottom:5px;
 }
 
 .boss-icon {
@@ -152,11 +170,16 @@ a:active {cursor: url('cursor/activec.png'), auto;}
 			display:block;
 		}
 		.dungeon-icon:active {cursor: url('cursor/activec.png'), auto;}
+		
+@keyframes spin {
+	from {transform:rotate(0deg)}
+	to {transform:rotate(360deg)}
+}
 /* MAP INDICATORS */
 
 /* TOOLTIPS */
 .tooltip {
-	width:110px;
+	width:112px;
 	
     display:none;
     z-index:1;
@@ -171,7 +194,18 @@ a:active {cursor: url('cursor/activec.png'), auto;}
     border-top-right-radius:5px;
     border:1px solid #adc1eb;
     z-index:1;
+	display:flex;
+	align-items:center;
 }
+	.header-icon {
+		display:inline-block;
+		width:8px;height:8px;
+		border:1px solid #4673d2;
+		border-radius:50%;
+		margin-left:2px;
+		background:linear-gradient(white 1%, rgb(91, 130, 215) 70%, white 110%);
+	}
+	
 .tooltip-body {
 	border:1px solid gray;
 	border-top:1px solid transparent;
@@ -243,4 +277,29 @@ a:active {cursor: url('cursor/activec.png'), auto;}
 .mjolnir_03{background-image: url(maps/56px/mjolnir_03.png);}
 .mjolnir_04{background-image: url(maps/56px/mjolnir_04.png);}
 .mjolnir_05{background-image: url(maps/56px/mjolnir_05.png);}
+
+.glast_01{background-image: url(maps/56px/glast_01.png);}
+.gef_fild06{background-image: url(maps/56px/gef_fild06.png);}
+.gef_fild05{background-image: url(maps/56px/gef_fild05.png);}
+.gef_fild04{background-image: url(maps/56px/gef_fild04.png);}
+.mjolnir_06{background-image: url(maps/56px/mjolnir_06.png);}
+.mjolnir_07{background-image: url(maps/56px/mjolnir_07.png);}
+.mjolnir_08{background-image: url(maps/56px/mjolnir_08.png);}
+.mjolnir_10{background-image: url(maps/56px/mjolnir_10.png);}
+.mjolnir_11{background-image: url(maps/56px/mjolnir_11.png);}
+
+.nif_fild01{background-image: url(maps/56px/nif_fild01.png);}
+.nif_fild02{background-image: url(maps/56px/nif_fild02.png);}
+.niflheim{background-image: url(maps/56px/niflheim.png);}
+.gef_fild08{background-image: url(maps/56px/gef_fild08.png);}
+.gef_fild07{background-image: url(maps/56px/gef_fild07.png);}
+.geffen{background-image: url(maps/56px/geffen.png);}
+.gef_fild00{background-image: url(maps/56px/gef_fild00.png);}
+.prt_fild00{background-image: url(maps/56px/prt_fild00.png);}
+.mjolnir_09{background-image: url(maps/56px/mjolnir_09.png);}
+.prt_fild01{background-image: url(maps/56px/prt_fild01.png);}
+.prt_fild02{background-image: url(maps/56px/prt_fild02.png);}
+.prt_fild03{background-image: url(maps/56px/prt_fild03.png);}
+.prt_monk{background-image: url(maps/56px/prt_monk.png);}
+.prt_gld{background-image: url(maps/56px/prt_gld.png);}
 /* MAPS REQUEST */

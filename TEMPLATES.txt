@@ -31,15 +31,19 @@
 				
 ###MONSTER COUNT 
 				<div class='tooltip'>
-					<div class='tooltip-header'></div>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>mjolnir_05</p>
+					</div>
 					<div class='tooltip-body'>
+						<div class='bgred'>
+						<p class='tooltip-text'>1 Mistress</p>
+						</div>
 						<div class=''>
-						<p class='tooltip-text'>10 Green Plant</p>
-						<p class='tooltip-text'>10 Red Plant</p>
-						<p class='tooltip-text'>10 Yellow Plant</p>
-						<p class='tooltip-text'>20 Demon Pungus</p>
-						<p class='tooltip-text'>40 Goat</p>
-						<p class='tooltip-text'>70 Sleeper</p>
+						<p class='tooltip-text'>1 Monster</p>	
+						<p class='tooltip-text'>2 Monster</p>
+						<p class='tooltip-text'>3 Monster</p>
+						<p class='tooltip-text'>4 Monster</p>
+						<p class='tooltip-text'>5 Monster</p>
 						</div>
 					</div>
 				</div>
