@@ -1,3 +1,4 @@
-# world-map
-2018 world map project
-Initial codes and files
+<h1>01/04/18 Updates</h1>
+
+- Added world-map practice copy
+- Added castle-name class (color:violet)
