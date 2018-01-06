@@ -1,4 +1,5 @@
 <h1>01/06/18 Updates</h1>
+
 - Added more map files
 - Added bgviolet class for castle tooltips
 - Create an updated practice copy
