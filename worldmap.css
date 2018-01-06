@@ -16,7 +16,7 @@ body {
 }
 
 .section-container {
-	width:100%;height:100%;
+	width:100%;height:1300px;
 	border:1px solid blue;
 }
 
@@ -52,6 +52,31 @@ body {
     bottom:-4px;left:23px;
 }
 
+.portal-bl:before {
+	content:'';
+    width:10px;height:4px;
+    background:#222;
+    position:absolute;
+    bottom:-4px;left:8px;
+}
+
+.portal-br:after {
+	content:'';
+    width:10px;height:4px;
+    background:#222;
+    position:absolute;
+    bottom:-4px;right:8px;
+}
+
+.portal-angle:before {
+	content:'';
+    width:10px;height:4px;
+    background:#222;
+    position:absolute;
+    bottom:-4px;right:-7px;
+	transform:rotate(45deg);
+}
+
 .overlay {
 	width:56px;height:56px;
 	position:relative;
@@ -59,7 +84,7 @@ body {
 	display:flex;
 	flex-direction:column;
 	align-items:space-around;
-	justify-content:center;
+	justify-content:space-between;
 }
 
 .overlay:hover{
@@ -73,7 +98,7 @@ body {
 a {
 	text-decoration:none;
 	cursor: url('cursor/linkc.png'), auto;
-	text-shadow: 0px 0px 3px #000, 0px 0px 2px #000, 0px 0px 1px #000;
+	text-shadow: 0px 0px 4px #000, 0px 0px 3px #000, 0px 0px 2px #000, 0px 0px 1px #000;
 }
 a:active {cursor: url('cursor/activec.png'), auto;}
 
@@ -84,30 +109,55 @@ a:active {cursor: url('cursor/activec.png'), auto;}
 	color:#000;
 }
 
+.castle-name {
+	font-family:sans-serif;
+	font-size:12px;
+	text-align:center;
+	color:#ff00ff;
+	margin:2px 0 0 0;
+}
+
+.castle-name-small {
+	font-family:sans-serif;
+	font-size:10px;
+	text-align:center;
+	color:#ff00ff;
+	margin:2px 0 0 0;
+}
+
 .town-name {
 	font-family:sans-serif;
 	font-size:12px;
 	text-align:center;
 	color:yellow;
-	margin:0;
+	margin:2px 0 0 0;
+}
+.field-name-small {
+	font-family:sans-serif;
+	text-align:center;
+	font-size:10px;
+	color:white;
+	margin:2px 0 0 0;
 }
 
 .field-name {
 	font-family:sans-serif;
 	text-align:center;
-	font-size:12px;
+	font-size:11px;
 	color:white;
-	margin:0;
+	margin:2px 0 0 0;
 }
 
 .tooltip-text {
 	font-family:sans-serif;
 	text-align:left;
 	font-size:12px;
+	padding:0 0 0 3px;
 	margin:0;
-	text-indent:3px;
+	cursor: url('cursor/linkc.png'), auto;
 }
 .tooltip-text:hover {background:#ffe4b3;}
+.tooltip-text:active {cursor: url('cursor/activec.png'), auto;}
 
 /* STANDARD ELEMENTS */
 
@@ -115,6 +165,7 @@ a:active {cursor: url('cursor/activec.png'), auto;}
 .map-indicators {
 	display:flex;
 	justify-content:space-around;
+	margin-bottom:5px;
 }
 
 .boss-icon {
@@ -152,12 +203,16 @@ a:active {cursor: url('cursor/activec.png'), auto;}
 			display:block;
 		}
 		.dungeon-icon:active {cursor: url('cursor/activec.png'), auto;}
+		
+@keyframes spin {
+	from {transform:rotate(0deg)}
+	to {transform:rotate(360deg)}
+}
 /* MAP INDICATORS */
 
 /* TOOLTIPS */
 .tooltip {
-	width:110px;
-	
+	width:115px;
     display:none;
     z-index:1;
     position:absolute;
@@ -171,7 +226,18 @@ a:active {cursor: url('cursor/activec.png'), auto;}
     border-top-right-radius:5px;
     border:1px solid #adc1eb;
     z-index:1;
+	display:flex;
+	align-items:center;
 }
+	.header-icon {
+		display:inline-block;
+		width:8px;height:8px;
+		border:1px solid #4673d2;
+		border-radius:50%;
+		margin-left:2px;
+		background:linear-gradient(white 1%, rgb(91, 130, 215) 70%, white 110%);
+	}
+	
 .tooltip-body {
 	border:1px solid gray;
 	border-top:1px solid transparent;
@@ -186,6 +252,8 @@ a:active {cursor: url('cursor/activec.png'), auto;}
 .bgred {background:rgb(255, 128, 128)}
 .bgpink {background:rgb(255, 204, 213)}
 .bgblue {background:rgb(204, 204, 255)}
+.bgviolet {background:#ffb3ff}
+hr {margin:0}
 /* TOOLTIPS */
 
 /* OTHER CODES */
@@ -243,4 +311,109 @@ a:active {cursor: url('cursor/activec.png'), auto;}
 .mjolnir_03{background-image: url(maps/56px/mjolnir_03.png);}
 .mjolnir_04{background-image: url(maps/56px/mjolnir_04.png);}
 .mjolnir_05{background-image: url(maps/56px/mjolnir_05.png);}
+
+.glast_01{background-image: url(maps/56px/glast_01.png);}
+.gef_fild06{background-image: url(maps/56px/gef_fild06.png);}
+.gef_fild05{background-image: url(maps/56px/gef_fild05.png);}
+.gef_fild04{background-image: url(maps/56px/gef_fild04.png);}
+.mjolnir_06{background-image: url(maps/56px/mjolnir_06.png);}
+.mjolnir_07{background-image: url(maps/56px/mjolnir_07.png);}
+.mjolnir_08{background-image: url(maps/56px/mjolnir_08.png);}
+.mjolnir_10{background-image: url(maps/56px/mjolnir_10.png);}
+.mjolnir_11{background-image: url(maps/56px/mjolnir_11.png);}
+
+.nif_fild01{background-image: url(maps/56px/nif_fild01.png);}
+.nif_fild02{background-image: url(maps/56px/nif_fild02.png);}
+.niflheim{background-image: url(maps/56px/niflheim.png);}
+.gef_fild08{background-image: url(maps/56px/gef_fild08.png);}
+.gef_fild07{background-image: url(maps/56px/gef_fild07.png);}
+.geffen{background-image: url(maps/56px/geffen.png);}
+.gef_fild00{background-image: url(maps/56px/gef_fild00.png);}
+.prt_fild00{background-image: url(maps/56px/prt_fild00.png);}
+.mjolnir_09{background-image: url(maps/56px/mjolnir_09.png);}
+.prt_fild01{background-image: url(maps/56px/prt_fild01.png);}
+.prt_fild02{background-image: url(maps/56px/prt_fild02.png);}
+.prt_fild03{background-image: url(maps/56px/prt_fild03.png);}
+.prt_monk{background-image: url(maps/56px/prt_monk.png);}
+
+.prt_gld{background-image: url(maps/56px/prt_gld.png);}
+
+.gef_fild12{background-image: url(maps/56px/gef_fild12.png);}
+.gef_fild13{background-image: url(maps/56px/gef_fild13.png);}
+.gef_fild09{background-image: url(maps/56px/gef_fild09.png);}
+.gef_fild01{background-image: url(maps/56px/gef_fild01.png);}
+.prt_fild04{background-image: url(maps/56px/prt_fild04.png);}
+.prt_fild05{background-image: url(maps/56px/prt_fild05.png);}
+.prontera{background-image: url(maps/56px/prontera.png);}
+.prt_fild06{background-image: url(maps/56px/prt_fild06.png);}
+.izlu2dun{background-image: url(maps/56px/izlu2dun.png);}
+
+.umbala{background-image: url(maps/56px/umbala.png);}
+.gef_fild14{background-image: url(maps/56px/gef_fild14.png);}
+.gef_fild10{background-image: url(maps/56px/gef_fild10.png);}
+.gef_fild03{background-image: url(maps/56px/gef_fild03.png);}
+.gef_fild02{background-image: url(maps/56px/gef_fild02.png);}
+.prt_fild07{background-image: url(maps/56px/prt_fild07.png);}
+.prt_fild08{background-image: url(maps/56px/prt_fild08.png);}
+.izlude{background-image: url(maps/56px/izlude.png);}
+
+.um_fild04{background-image: url(maps/56px/um_fild04.png);}
+.gef_fild11{background-image: url(maps/56px/gef_fild11.png);}
+.prt_fild11{background-image: url(maps/56px/prt_fild11.png);}
+.prt_fild10{background-image: url(maps/56px/prt_fild10.png);}
+.prt_fild09{background-image: url(maps/56px/prt_fild09.png);}
+.moc_fild01{background-image: url(maps/56px/moc_fild01.png);}
+.pay_fild04{background-image: url(maps/56px/pay_fild04.png);}
+.pay_arche{background-image: url(maps/56px/pay_arche.png);}
+
+.um_fild01{background-image: url(maps/56px/um_fild01.png);}
+.um_fild02{background-image: url(maps/56px/um_fild02.png);}
+.um_fild03{background-image: url(maps/56px/um_fild03.png);}
+.moc_ruins{background-image: url(maps/56px/moc_ruins.png);}
+.moc_fild07{background-image: url(maps/56px/moc_fild07.png);}
+.moc_fild06{background-image: url(maps/56px/moc_fild06.png);}
+.moc_fild05{background-image: url(maps/56px/moc_fild05.png);}
+.moc_fild04{background-image: url(maps/56px/moc_fild04.png);}
+.moc_fild02{background-image: url(maps/56px/moc_fild02.png);}
+.pay_gld{background-image: url(maps/56px/pay_gld.png);}
+.payon{background-image: url(maps/56px/payon.png);}
+.pay_fild08{background-image: url(maps/56px/pay_fild08.png);}
+.pay_fild09{background-image: url(maps/56px/pay_fild09.png);}
+
+.cmd_fild01{background-image: url(maps/56px/cmd_fild01.png);}
+.cmd_fild03{background-image: url(maps/56px/cmd_fild03.png);}
+.moc_fild19{background-image: url(maps/56px/moc_fild19.png);}
+.morocc{background-image: url(maps/56px/morocc.png);}
+.moc_fild10{background-image: url(maps/56px/moc_fild10.png);}
+.moc_fild09{background-image: url(maps/56px/moc_fild09.png);}
+.moc_fild08{background-image: url(maps/56px/moc_fild08.png);}
+.moc_fild13{background-image: url(maps/56px/moc_fild13.png);}
+.moc_fild03{background-image: url(maps/56px/moc_fild03.png);}
+.pay_fild01{background-image: url(maps/56px/pay_fild01.png);}
+.pay_fild07{background-image: url(maps/56px/pay_fild07.png);}
+.pay_fild10{background-image: url(maps/56px/pay_fild10.png);}
+.alb2trea{background-image: url(maps/56px/alb2trea.png);}
+
+.comodo{background-image: url(maps/56px/comodo.png);}
+.cmd_fild02{background-image: url(maps/56px/cmd_fild02.png);}
+.cmd_fild04{background-image: url(maps/56px/cmd_fild04.png);}
+.cmd_fild06{background-image: url(maps/56px/cmd_fild06.png);}
+.cmd_fild08{background-image: url(maps/56px/cmd_fild08.png);}
+.moc_fild12{background-image: url(maps/56px/moc_fild12.png);}
+.moc_fild11{background-image: url(maps/56px/moc_fild11.png);}
+.moc_fild15{background-image: url(maps/56px/moc_fild15.png);}
+.moc_fild14{background-image: url(maps/56px/moc_fild14.png);}
+.pay_fild11{background-image: url(maps/56px/pay_fild11.png);}
+.pay_fild02{background-image: url(maps/56px/pay_fild02.png);}
+.pay_fild03{background-image: url(maps/56px/pay_fild03.png);}
+.alberta{background-image: url(maps/56px/alberta.png);}
+.tur_dun01{background-image: url(maps/56px/tur_dun01.png);}
+
+.cmd_fild07{background-image: url(maps/56px/cmd_fild07.png);}
+.cmd_fild09{background-image: url(maps/56px/cmd_fild09.png);}
+.moc_fild18{background-image: url(maps/56px/moc_fild18.png);}
+.moc_fild17{background-image: url(maps/56px/moc_fild17.png);}
+.moc_fild16{background-image: url(maps/56px/moc_fild16.png);}
+.pay_fild05{background-image: url(maps/56px/pay_fild05.png);}
+.pay_fild06{background-image: url(maps/56px/pay_fild06.png);}
 /* MAPS REQUEST */
