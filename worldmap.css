@@ -12,18 +12,19 @@ body {
 	display:flex;
 	justify-content:center;
 	align-items:center;
-	border:1px solid green;
+	border:10px solid green;
+	
 }
 
 .section-container {
-	width:100%;height:1300px;
+	width:auto;height:1200px;
 	border:1px solid blue;
 }
 
 .section {
 	display:flex;
 	height:60px;
-	
+	border:1px solid red
 }
 /* CONTAINERS */
 
@@ -89,6 +90,7 @@ body {
 
 .overlay:hover{
 	box-shadow:0 0 15px yellow inset;
+	cursor: url('cursor/qmc.png'), auto;
 }
 
 		.overlay:hover .tooltip {
@@ -251,13 +253,33 @@ a:active {cursor: url('cursor/activec.png'), auto;}
 
 .bgred {background:rgb(255, 128, 128)}
 .bgpink {background:rgb(255, 204, 213)}
-.bgblue {background:rgb(204, 204, 255)}
+.bgblue {background:rgb(204, 204, 255);text-align:center;}
 .bgviolet {background:#ffb3ff}
 hr {margin:0}
 /* TOOLTIPS */
 
 /* OTHER CODES */
 .center {text-align:center;}
+
+	/* MAP INDENTS */
+	.indent-top {margin-top: 32px;}
+	.indent-half {margin-left: 32px;}
+	.indent-one {margin-left:62px}
+	.indent-1p5 {margin-left: 92px;}
+	.indent-2maps {margin-left: 122px;}
+	.indent-2p5 {margin-left: 152px;}
+	.indent-3maps {margin-left: 182px;}
+	.indent-3p5 {margin-left: 212px;}
+	.indent-4maps {margin-left: 242px;}
+	.indent-4p5 {margin-left: 272px;}
+	.indent-5maps {margin-left: 302px;}
+	.indent-5p5 {margin-left: 332px;}
+	.indent-6maps {margin-left: 362px;}
+	.indent-7maps {margin-left: 422px;}
+	.indent-8maps {margin-left: 482px;}
+	.indent-10maps {margin-left: 602px;}
+	.indent-11maps {margin-left: 662px;}
+	/* MAP INDENTS */
 /* OTHER CODES */
 
 /* MAPS REQUEST */
