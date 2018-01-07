@@ -2,8 +2,8 @@
 
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="worldmap.css">
-
+<link rel="stylesheet" href="worldmap.css">
+<script src="worldmap.js"></script>
 <script>
 
 </script>
@@ -87,11 +87,46 @@ green -
 
 -->
 <div class='inner-body'>
-<div class='section-container'>
+
+				<div class='tooltip-fixed'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text-search'>Search</p>
+					</div>
+					<div class='tooltip-body flex-column'>
+						<input list='searchItems' id='inputValue' onkeyup='search()' autofocus>
+							<datalist id='searchItems'>
+								<option value="Try">
+							</datalist>
+							
+						<div class='margin-bottom-5'>
+							<p class='tooltip-text-search center margin-bottom-5'><strong>Search Guidelines</strong></p>
+							<p class='tooltip-text-search margin-left-5'>&#8226 Search using small caps</p>
+							<p class='tooltip-text-search margin-left-5'>&#8226 Replace space with dash
+							<br/>ex: peco-peco</p>
+						</div>
+						
+						<div class=''>
+						
+						<div class='button tooltip-text center' onclick='showTown()'>Towns</div>
+						<div class='button tooltip-text center' onclick='showDungeon()'>Dungeons</div>
+						
+						</div>
+						<!--
+						<iframe src='https://99porings.com' width='100%' height='300'
+						scrolling="no"></iframe>
+						-->
+						
+					</div>
+				</div>
+
+<div class='section-container-1' id='town-window' >
 
 	<div class='section'>
 	
-		<div class='maps yuno portal-bottom'>
+	<!--
+	<div class='section-1-tab' onclick='showTown()'>qwe</div>
+	-->
+		<div class='maps yuno juno indent-7maps portal-bottom'>
 			<div class='overlay'>
 				<a href='#' class='town-name'>Juno</a>
 			</div>
@@ -101,10 +136,12 @@ green -
 		
 		<div class='maps yuno_fild06 portal-bottom'>
 			<div class='overlay'>
-				<a class='field-name'>yuno<br/>fild06</a>
+				<a class='field-name-small'>yuno_fild06</a>
 				
 				<div class='tooltip'>
-					<div class='tooltip-header'></div>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>yuno_fild06</p>
+					</div>
 					<div class='tooltip-body'>
 						<div class=''>
 						<p class='tooltip-text'>10 Green Plant</p>
@@ -125,12 +162,14 @@ green -
 	
 	<div class='section'>
 	
-		<div class='maps ein_fild01 portal-bottom'>
+		<div class='maps ein_fild01 indent-6maps portal-bottom'>
 			<div class='overlay'>
-				<a href='#' class='field-name'>ein<br/>fild01</a>
+				<a href='#' class='field-name'>ein_fild01</a>
 				
 				<div class='tooltip'>
-					<div class='tooltip-header'></div>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>ein_fild01</p>
+					</div>
 					<div class='tooltip-body'>
 						<div class=''>
 						<p class='tooltip-text'>85 Demon Pungus</p>
@@ -145,10 +184,12 @@ green -
 		
 		<div class='maps yuno_fild04 portal-bottom portal-right'>
 			<div class='overlay'>
-				<a class='field-name'>yuno<br/>fild04</a>
+				<a class='field-name-small'>yuno_fild04</a>
 				
 				<div class='tooltip'>
-					<div class='tooltip-header'></div>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>yuno_fild04</p>
+					</div>
 					<div class='tooltip-body'>
 						<div class=''>
 						<p class='tooltip-text'>10 Red Plant</p>
@@ -168,10 +209,12 @@ green -
 		
 		<div class='maps yuno_fild03 portal-bottom portal-right'>
 			<div class='overlay'>
-				<a href='#' class='field-name'>yuno<br/>fild03</a>
+				<a href='#' class='field-name-small'>yuno_fild03</a>
 				
 				<div class='tooltip'>
-					<div class='tooltip-header'></div>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>yuno_fild03</p>
+					</div>
 					<div class='tooltip-body'>
 						<div class='bgpink'>
 						<p class='tooltip-text'>1 Angeling</p>
@@ -212,10 +255,12 @@ green -
 		
 		<div class='maps yuno_fild02 portal-bottom'>
 			<div class='overlay'>
-				<a href='#' class='field-name'>yuno<br/>fild02</a>
+				<a href='#' class='field-name-small'>yuno_fild02</a>
 				
 				<div class='tooltip'>
-					<div class='tooltip-header'></div>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>yuno_fild02</p>
+					</div>
 					<div class='tooltip-body'>
 						<div class='bgpink'>
 						<p class='tooltip-text'>1 Arc Angeling</p>
@@ -247,12 +292,14 @@ green -
 													
 	<div class='section'>
 	
-		<div class='maps ein_fild03 portal-bottom portal-right'>
+		<div class='maps ein_fild03 indent-4maps portal-bottom portal-right'>
 			<div class='overlay'>
-				<a href='#' class='field-name'>ein<br/>fild03</a>
+				<a href='#' class='field-name'>ein_fild03</a>
 				
 				<div class='tooltip'>
-					<div class='tooltip-header'></div>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>ein_fild03</p>
+					</div>
 					<div class='tooltip-body'>
 						<div class=''>
 						<p class='tooltip-text'>10 Green Plant</p>
@@ -272,10 +319,12 @@ green -
 
 		<div class='maps ein_fild04 portal-bottom portal-right'>
 			<div class='overlay'>
-				<a href='#' class='field-name'>ein<br/>fild04</a>
+				<a href='#' class='field-name'>ein_fild04</a>
 				
 				<div class='tooltip'>
-					<div class='tooltip-header'></div>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>ein_fild04</p>
+					</div>
 					<div class='tooltip-body'>
 						<div class=''>
 						<p class='tooltip-text'>10 Green Plant</p>
@@ -297,10 +346,12 @@ green -
 
 		<div class='maps ein_fild05 portal-right'>
 			<div class='overlay'>
-				<a href='#' class='field-name'>ein<br/>fild05</a>
+				<a href='#' class='field-name'>ein_fild05</a>
 				
 				<div class='tooltip'>
-					<div class='tooltip-header'></div>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>ein_fild05</p>
+					</div>
 					<div class='tooltip-body'>
 						<div class=''>
 						<p class='tooltip-text'>30 Anopheles</p>
@@ -319,10 +370,12 @@ green -
 
 		<div class='maps ein_fild06 portal-bottom portal-right'>
 			<div class='overlay'>
-				<a href='#' class='field-name'>ein<br/>fild06</a>
+				<a href='#' class='field-name'>ein_fild06</a>
 				
 				<div class='tooltip'>
-					<div class='tooltip-header'></div>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>ein_fild06</p>
+					</div>
 					<div class='tooltip-body'>
 						<div class=''>
 						<p class='tooltip-text'>10 Green Plant</p>
@@ -342,10 +395,12 @@ green -
 
 		<div class='maps yuno_fild07 portal-bottom portal-right'>
 			<div class='overlay'>
-				<a href='#' class='field-name'>yuno<br/>fild07</a>
+				<a href='#' class='field-name-small'>yuno_fild07</a>
 				
 				<div class='tooltip'>
-					<div class='tooltip-header'></div>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>yuno_fild07</p>
+					</div>
 					<div class='tooltip-body'>
 						<div class='bgblue'>
 						<p class='tooltip-text'>Juperos Ruins</p>
@@ -373,10 +428,12 @@ green -
 
 		<div class='maps yuno_fild08 portal-bottom portal-right'>
 			<div class='overlay'>
-				<a href='#' class='field-name'>yuno<br/>fild08</a>
+				<a href='#' class='field-name-small'>yuno_fild08</a>
 				
 				<div class='tooltip'>
-					<div class='tooltip-header'></div>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>yuno_fild08</p>
+					</div>
 					<div class='tooltip-body'>
 						<div class='bgblue'>
 						<p class='tooltip-text'>Kiel Dungeon</p>
@@ -404,10 +461,12 @@ green -
 
 		<div class='maps yuno_fild09 portal-bottom'>
 			<div class='overlay'>
-				<a href='#' class='field-name'>yuno<br/>fild09</a>
+				<a href='#' class='field-name-small'>yuno_fild09</a>
 				
 				<div class='tooltip'>
-					<div class='tooltip-header'></div>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>yuno_fild09</p>
+					</div>
 					<div class='tooltip-body'>
 						<div class=''>
 						<p class='tooltip-text'>10 Green Plant</p>
@@ -431,12 +490,14 @@ green -
 	
 	<div class='section'>
 	
-		<div class='maps lhz_fild01 portal-bottom portal-right'>
+		<div class='maps lhz_fild01 indent-3maps portal-bottom portal-right'>
 			<div class='overlay'>
-				<a href='#' class='field-name'>lhz<br/>fild01</a>
+				<a href='#' class='field-name'>lhz_fild01</a>
 				
 				<div class='tooltip'>
-					<div class='tooltip-header'></div>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>lhz_fild01</p>
+					</div>
 					<div class='tooltip-body'>
 						<div class=''>
 						<p class='tooltip-text'>10 Green Plant</p>
@@ -456,10 +517,12 @@ green -
 		
 		<div class='maps lhz_fild02 portal-bottom'>
 			<div class='overlay'>
-				<a href='#' class='field-name'>lhz<br/>fild02</a>
+				<a href='#' class='field-name'>lhz_fild02</a>
 				
 				<div class='tooltip'>
-					<div class='tooltip-header'></div>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>lhz_fild02</p>
+					</div>
 					<div class='tooltip-body'>
 						<div class=''>
 						<p class='tooltip-text'>10 Green Plant</p>
@@ -495,10 +558,12 @@ green -
 		
 		<div class='maps ein_fild07 portal-bottom portal-right'>
 			<div class='overlay'>
-				<a href='#' class='field-name'>ein<br/>fild07</a>
+				<a href='#' class='field-name'>ein_fild07</a>
 				
 				<div class='tooltip'>
-					<div class='tooltip-header'></div>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>ein_fild07</p>
+					</div>
 					<div class='tooltip-body'>
 						<div class=''>
 						<p class='tooltip-text'>10 Red Mushroom</p>
@@ -520,10 +585,12 @@ green -
 		
 		<div class='maps yuno_fild11 portal-bottom portal-right'>
 			<div class='overlay'>
-				<a href='#' class='field-name'>yuno<br/>fild11</a>
+				<a href='#' class='field-name-small'>yuno_fild11</a>
 				
 				<div class='tooltip'>
-					<div class='tooltip-header'></div>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>yuno_fild11</p>
+					</div>
 					<div class='tooltip-body'>
 						<div class=''>
 						<p class='tooltip-text'>10 Green Plant</p>
@@ -542,10 +609,12 @@ green -
 		
 		<div class='maps yuno_fild12 portal-bottom portal-right'>
 			<div class='overlay'>
-				<a href='#' class='field-name'>yuno<br/>fild12</a>
+				<a href='#' class='field-name-small'>yuno_fild12</a>
 				
 				<div class='tooltip'>
-					<div class='tooltip-header'></div>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>yuno_fild12</p>
+					</div>
 					<div class='tooltip-body'>
 						<div class=''>
 						<p class='tooltip-text'>15 Poporing</p>
@@ -562,10 +631,12 @@ green -
 		
 		<div class='maps yuno_fild01 portal-bottom'>
 			<div class='overlay'>
-				<a href='#' class='field-name'>yuno<br/>fild01</a>
+				<a href='#' class='field-name-small'>yuno_fild01</a>
 								
 				<div class='tooltip'>
-					<div class='tooltip-header'></div>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>yuno_fild01</p>
+					</div>
 					<div class='tooltip-body'>
 						<div class=''>
 						<p class='tooltip-text'>2 Blue Plant</p>
@@ -585,7 +656,7 @@ green -
 		
 <!-- MAP DIVIDER -->
 
-		<div class='maps xmas lutie portal-bottom'>
+		<div class='maps xmas lutie indent-half portal-bottom'>
 			<div class='overlay'>
 				<a href='#' class='town-name'>Lutie</a>
 				
@@ -594,7 +665,9 @@ green -
 				</div>
 				
 				<div class='tooltip'>
-					<div class='tooltip-header'></div>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>Lutie</p>
+					</div>
 					<div class='tooltip-body'>
 						<div class='bgblue'>
 						<p class='tooltip-text'>Toy Factory</p>
@@ -606,12 +679,14 @@ green -
 		
 <!-- MAP DIVIDER -->
 
-		<div class='maps ama_fild01 portal-bottom'>
+		<div class='maps ama_fild01 indent-half portal-bottom'>
 			<div class='overlay'>
-				<a href='#' class='field-name'>ama<br/>fild01</a>
+				<a href='#' class='field-name'>ama_fild01</a>
 				
 				<div class='tooltip'>
-					<div class='tooltip-header'></div>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>ama_fild01</p>
+					</div>
 					<div class='tooltip-body'>
 						<div class=''>
 						<p class='tooltip-text'>15 Bigfoot</p>
@@ -629,7 +704,7 @@ green -
 		
 <!-- MAP DIVIDER -->
 
-		<div class='maps gonryun portal-bottom'>
+		<div class='maps gonryun indent-half portal-bottom'>
 			<div class='overlay'>
 				<a href='#' class='town-name'>Gonryun</a>
 				
@@ -638,7 +713,9 @@ green -
 				</div>
 				
 				<div class='tooltip'>
-					<div class='tooltip-header'></div>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>Gonryun</p>
+					</div>
 					<div class='tooltip-body'>
 						<div class='bgblue'>
 						<p class='tooltip-text'>Gonryun Dungeon</p>
@@ -650,7 +727,7 @@ green -
 		
 <!-- MAP DIVIDER -->
 
-		<div class='maps louyang portal-bottom'>
+		<div class='maps louyang indent-half portal-bottom'>
 			<div class='overlay'>
 				<a href='#' class='town-name'>Louyang</a>
 				
@@ -659,7 +736,9 @@ green -
 				</div>
 				
 				<div class='tooltip'>
-					<div class='tooltip-header'></div>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>Louyang</p>
+					</div>
 					<div class='tooltip-body'>
 						<div class='bgblue'>
 						<p class='tooltip-text'>Louyang Dungeon</p>
@@ -675,9 +754,9 @@ green -
 	
 	<div class='section'>
 	
-		<div class='maps lighthalzen'>
+		<div class='maps indent-3maps lighthalzen'>
 			<div class='overlay'>
-				<a href='#' class='town-name'>Light-<br/>halzen</a>				
+				<a href='#' class='town-name'>Light-halzen</a>				
 			</div>
 		</div>
 		
@@ -685,10 +764,12 @@ green -
 
 		<div class='maps lhz_fild03 portal-right'>
 			<div class='overlay'>
-				<a href='#' class='field-name'>lhz<br/>fild03</a>
+				<a href='#' class='field-name'>lhz_fild03</a>
 				
 				<div class='tooltip'>
-					<div class='tooltip-header'></div>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>lhz_fild03</p>
+					</div>
 					<div class='tooltip-body'>
 						<div class=''>
 						<p class='tooltip-text'>10 Green Plant</p>
@@ -710,10 +791,12 @@ green -
 
 		<div class='maps ein_fild08 portal-right'>
 			<div class='overlay'>
-				<a href='#' class='field-name'>ein<br/>fild08</a>
+				<a href='#' class='field-name'>ein_fild08</a>
 				
 				<div class='tooltip'>
-					<div class='tooltip-header'></div>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>ein_fild08</p>
+					</div>
 					<div class='tooltip-body'>
 						<div class=''>
 						<p class='tooltip-text'>10 Red Mushroom</p>
@@ -736,10 +819,12 @@ green -
 
 		<div class='maps ein_fild09'>
 			<div class='overlay'>
-				<a href='#' class='field-name'>ein<br/>fild09</a>
+				<a href='#' class='field-name'>ein_fild09</a>
 				
 				<div class='tooltip'>
-					<div class='tooltip-header'></div>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>ein_fild09</p>
+					</div>
 					<div class='tooltip-body'>
 						<div class=''>
 						<p class='tooltip-text'>10 Red Mushroom</p>
@@ -759,9 +844,24 @@ green -
 		
 <!-- MAP DIVIDER -->
 
-		<div class='maps alde_gld portal-right'>
+		<div class='maps alde_gld luina indent-2maps portal-right'>
 			<div class='overlay'>
-				<a href='#' class='field-name'>Luina</a>			
+				<a href='#' class='castle-name'>Luina</a>
+
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>alde_gld</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class='bgviolet'>
+						<p class='tooltip-text'>Hohenschwangau</p>	
+						<p class='tooltip-text'>Neuschwanstein</p>
+						<p class='tooltip-text'>Nuernberg</p>
+						<p class='tooltip-text'>Rothenburg</p>
+						<p class='tooltip-text'>Wuerzburg</p>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 		
@@ -769,10 +869,12 @@ green -
 
 		<div class='maps aldebaran portal-bottom'>
 			<div class='overlay'>
-				<a href='#' class='town-name'>Al De Baran</a>
+				<a href='#' class='town-name'>Aldebaran</a>
 				
 				<div class='tooltip'>
-					<div class='tooltip-header'></div>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>Aldebaran</p>
+					</div>
 					<div class='tooltip-body'>
 						<div class='bgblue'>
 						<p class='tooltip-text'>Clock Tower</p>
@@ -789,16 +891,18 @@ green -
 		
 <!-- MAP DIVIDER -->
 
-		<div class='maps xmas_fild01'>
+		<div class='maps xmas_fild01 indent-half'>
 			<div class='overlay'>
-				<a href='#' class='field-name'>xmas<br/>fild01</a>
+				<a href='#' class='field-name-small'>xmas_fild01</a>
 				
 				<div class='map-indicators'>
 					<div class='boss-icon'></div>					
 				</div>
 				
 				<div class='tooltip'>
-					<div class='tooltip-header'></div>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>xmas_fild01</p>
+					</div>
 					<div class='tooltip-body'>
 						<div class='bgred'>
 						<p class='tooltip-text'>1 Garm</p>
@@ -816,7 +920,7 @@ green -
 		
 <!-- MAP DIVIDER -->
 
-		<div class='maps amatsu'>
+		<div class='maps amatsu indent-half'>
 			<div class='overlay'>
 				<a href='#' class='town-name'>Amatsu</a>
 				
@@ -825,7 +929,9 @@ green -
 				</div>
 				
 				<div class='tooltip'>
-					<div class='tooltip-header'></div>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>Amatsu</p>
+					</div>
 					<div class='tooltip-body'>
 						<div class='bgblue'>
 						<p class='tooltip-text'>Amatsu Dungeon</p>
@@ -838,12 +944,14 @@ green -
 		
 <!-- MAP DIVIDER -->
 
-		<div class='maps gon_fild01'>
+		<div class='maps gon_fild01 indent-half'>
 			<div class='overlay'>
-				<a href='#' class='field-name'>gon<br/>fild01</a>
+				<a href='#' class='field-name'>gon_fild01</a>
 				
 				<div class='tooltip'>
-					<div class='tooltip-header'></div>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>gon_fild01</p>
+					</div>
 					<div class='tooltip-body'>
 						<div class=''>
 						<p class='tooltip-text'>5 Green Plant</p>
@@ -862,12 +970,14 @@ green -
 		
 <!-- MAP DIVIDER -->
 
-		<div class='maps lou_fild01'>
+		<div class='maps lou_fild01 indent-half'>
 			<div class='overlay'>
-				<a href='#' class='field-name'>lou<br/>fild01</a>
+				<a href='#' class='field-name'>lou_fild01</a>
 				
 				<div class='tooltip'>
-					<div class='tooltip-header'></div>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>lou_fild01</p>
+					</div>
 					<div class='tooltip-body'>
 						<div class=''>
 						<p class='tooltip-text'>10 Yellow Plant</p>
@@ -891,7 +1001,7 @@ green -
 
 	<div class='section'>
 	
-		<div class='maps mjolnir_12 portal-bottom'>
+		<div class='maps mjolnir_12 indent-10maps portal-bottom'>
 			<div class='overlay'>
 				<a href='#' class='field-name'>mjolnir_12</a>
 				
@@ -900,7 +1010,9 @@ green -
 				</div>
 				
 				<div class='tooltip'>
-					<div class='tooltip-header'></div>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>mjolnir_12</p>
+					</div>
 					<div class='tooltip-body'>
 						<div class='bgblue'>
 						<p class='tooltip-text'>Hidden Temple</p>
@@ -920,7 +1032,7 @@ green -
 		
 <!-- MAP DIVIDER -->
 		
-		<div class='maps ayothaya portal-right'>
+		<div class='maps ayothaya indent-one indent-top portal-right'>
 			<div class='overlay'>
 				<a href='#' class='town-name'>Ayothaya</a>
 			</div>
@@ -928,12 +1040,14 @@ green -
 		
 <!-- MAP DIVIDER -->
 		
-		<div class='maps ayo_fild01 portal-right'>
+		<div class='maps ayo_fild01 indent-top portal-right'>
 			<div class='overlay'>
-				<a href='#' class='field-name'>ayo<br/>fild01</a>
+				<a href='#' class='field-name'>ayo_fild01</a>
 				
 				<div class='tooltip'>
-					<div class='tooltip-header'></div>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>ayo_fild01</p>
+					</div>
 					<div class='tooltip-body'>
 						<div class=''>
 						<p class='tooltip-text'>10 Green Plant</p>
@@ -949,16 +1063,18 @@ green -
 		
 <!-- MAP DIVIDER -->
 		
-		<div class='maps ayo_fild02'>
+		<div class='maps ayo_fild02 indent-top'>
 			<div class='overlay'>
-				<a href='#' class='field-name'>ayo<br/>fild02</a>
+				<a href='#' class='field-name'>ayo_fild02</a>
 				
 				<div class='map-indicators'>
 					<div class='dungeon-icon'></div>
 				</div>
 				
 				<div class='tooltip'>
-					<div class='tooltip-header'></div>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>ayo_fild02</p>
+					</div>
 					<div class='tooltip-body'>
 						<div class='bgblue'>
 						<p class='tooltip-text'>Ancient Shrine</p>
@@ -980,45 +1096,2658 @@ green -
 													
 	<div class='section'>
 	
-		<div class='maps mjolnir_01 portal-bottom portal-right'>
+		<div class='maps mjolnir_01 indent-6maps portal-bottom portal-right'>
 			<div class='overlay'>
 				<a href='#' class='field-name'>mjolnir_01</a>
-			</div>
-		</div>
-		
-		<div class='maps mjolnir_02 portal-bottom portal-right'>
-			<div class='overlay'>
-				<a href='#' class='field-name'>mjolnir_02</a>
-			</div>
-		</div>
-		
-		<div class='maps mjolnir_03 portal-bottom portal-right'>
-			<div class='overlay'>
-				<a href='#' class='field-name'>mjolnir_03</a>
-			</div>
-		</div>
-		
-		<div class='maps mjolnir_04 portal-bottom portal-right'>
-			<div class='overlay'>
-				<a href='#' class='field-name'>mjolnir_04</a>
-			</div>
-		</div>
-		
-		<div class='maps mjolnir_05 portal-bottom'>
-			<div class='overlay'>
-				<a href='#' class='field-name'>mjolnir_05</a>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>mjolnir_01</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class=''>
+						<p class='tooltip-text'>5 Blue Plant</p>
+						<p class='tooltip-text'>10 Green Plant</p>
+						<p class='tooltip-text'>2 Shining Plant</p>
+						<p class='tooltip-text'>35 Chonchon</p>
+						<p class='tooltip-text'>10 Steel Chonchon</p>
+						<p class='tooltip-text'>20 Creamy</p>
+						<p class='tooltip-text'>65 Hornet</p>
+						<p class='tooltip-text'>25 Mandragora</p>						
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 		
 <!-- MAP DIVIDER -->
 		
+		<div class='maps mjolnir_02 portal-bottom portal-right'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>mjolnir_02</a>
+				
+				<div class='map-indicators'>
+					<div class='dungeon-icon'></div>
+				</div>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>mjolnir_02</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class='bgblue'>
+						<p class='tooltip-text'>Coal Mines</p>
+						</div>
+						<div class=''>
+						<p class='tooltip-text'>5 Blue Plant</p>
+						<p class='tooltip-text'>23 Green Plant</p>
+						<p class='tooltip-text'>6 Red Plant</p>
+						<p class='tooltip-text'>50 Creamy</p>
+						<p class='tooltip-text'>10 Dustiness</p>
+						<p class='tooltip-text'>30 Fabre</p>
+						<p class='tooltip-text'>20 Pupa</p>			
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+		
+		<div class='maps mjolnir_03 portal-bottom portal-right'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>mjolnir_03</a>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>mjolnir_03</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class=''>
+						<p class='tooltip-text'>13 Green Plant</p>
+						<p class='tooltip-text'>2 Shining Plant</p>
+						<p class='tooltip-text'>15 Bigfoot</p>
+						<p class='tooltip-text'>65 Caramel</p>
+						<p class='tooltip-text'>15 Dustiness</p>
+						<p class='tooltip-text'>10 Poporing</p>
+						<p class='tooltip-text'>15 Smokie</p>						
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+		
+		<div class='maps mjolnir_04 portal-bottom portal-right'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>mjolnir_04</a>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>mjolnir_04</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class=''>
+						<p class='tooltip-text'>17 Green Plant</p>
+						<p class='tooltip-text'>3 Shining Plant</p>
+						<p class='tooltip-text'>65 Argos</p>
+						<p class='tooltip-text'>10 Bigfoot</p>
+						<p class='tooltip-text'>15 Caramel</p>
+						<p class='tooltip-text'>35 Flora</p>
+						<p class='tooltip-text'>10 Poporing</p>					
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+		
+		<div class='maps mjolnir_05 portal-bottom'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>mjolnir_05</a>
+				
+				<div class='map-indicators'>
+					<div class='boss-icon'></div>
+				</div>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>mjolnir_05</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class='bgred'>
+						<p class='tooltip-text'>1 Mistress</p>
+						</div>
+						<div class=''>
+						<p class='tooltip-text'>9 Blue Plant</p>	
+						<p class='tooltip-text'>10 Red Plant</p>
+						<p class='tooltip-text'>1 Shining Plant</p>
+						<p class='tooltip-text'>50 Argiope</p>
+						<p class='tooltip-text'>20 Argos</p>
+						<p class='tooltip-text'>5 Flora</p>
+						<p class='tooltip-text'>60 Hornet</p>
+						<p class='tooltip-text'>45 Mantis</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+				
 	</div>		
 													
 													<!-- SECTION DIVIDER -->
+				
+	<div class='section'>
+	
+		<div class='maps glast_01 indent-3maps glast-heim gh portal-right'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>Glast Heim</a>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>Glast Heim</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class='bgpink'>
+						<p class='tooltip-text'>2 Abysmal Knight</p>
+						</div>
+						<div class='bgblue'>
+						<p class='tooltip-text'>Sewer</p>
+						<p class='tooltip-text'>Castle</p>
+						<p class='tooltip-text'>Prison</p>
+						<p class='tooltip-text'>Chivalry</p>
+						<p class='tooltip-text'>St.Abbey</p>
+						<p class='tooltip-text'>Staircase</p>
+						<p class='tooltip-text'>Churchyard</p>
+						</div>
+						<div class=''>
+						<p class='tooltip-text'>2 Blue Plant</p>	
+						<p class='tooltip-text'>8 Green Plant</p>
+						<p class='tooltip-text'>1 Shining Plant</p>
+						<p class='tooltip-text'>15 Bathory</p>
+						<p class='tooltip-text'>15 Jakk</p>
+						<p class='tooltip-text'>15 Myst</p>
+						<p class='tooltip-text'>30 Poison Spore</p>
+						</div>
+					</div>
+				</div>
+				
+				<div class='map-indicators'>
+					<div class='dungeon-icon'></div>
+					<div class='miniboss-icon'></div>
+				</div>				
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+
+		<div class='maps gef_fild06 portal-bottom portal-right'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>gef_fild06</a>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>gef_fild06</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class=''>
+						<p class='tooltip-text'>4 Shining Plant</p>
+						<p class='tooltip-text'>20 Kobold Axe</p>	
+						<p class='tooltip-text'>10 Kobold Hammer</p>
+						<p class='tooltip-text'>10 Kobold Mace</p>
+						<p class='tooltip-text'>50 Petite(Ground)</p>
+						<p class='tooltip-text'>50 Petite(Sky)</p>
+						<p class='tooltip-text'>10 Poporing</p>
+						<p class='tooltip-text'>20 Stainer</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+
+		<div class='maps gef_fild05 portal-bottom portal-right'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>gef_fild05</a>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>gef_fild05</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class=''>
+						<p class='tooltip-text'>15 Red Plant</p>	
+						<p class='tooltip-text'>30 Dustiness</p>
+						<p class='tooltip-text'>10 Kobold Archer</p>
+						<p class='tooltip-text'>30 Poring</p>
+						<p class='tooltip-text'>50 Wild Rose</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+
+		<div class='maps gef_fild04 portal-bottom portal-right'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>gef_fild04</a>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>gef_fild04</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class=''>
+						<p class='tooltip-text'>14 Green Plant</p>	
+						<p class='tooltip-text'>30 Chonchon</p>
+						<p class='tooltip-text'>20 Fabre</p>
+						<p class='tooltip-text'>30 Poring</p>
+						<p class='tooltip-text'>60 Pupa</p>
+						<p class='tooltip-text'>20 Roda Frog</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+
+		<div class='maps mjolnir_06 portal-bottom portal-right'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>mjolnir_06</a>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>mjolnir_06</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class=''>
+						<p class='tooltip-text'>2 Blue Plant</p>	
+						<p class='tooltip-text'>8 Red Mushroom</p>
+						<p class='tooltip-text'>30 Caramel</p>
+						<p class='tooltip-text'>20 Coco</p>
+						<p class='tooltip-text'>20 Horn</p>
+						<p class='tooltip-text'>20 Poporing</p>
+						<p class='tooltip-text'>70 Stainer</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+
+		<div class='maps mjolnir_07 portal-bottom portal-right'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>mjolnir_07</a>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>mjolnir_07</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class=''>
+						<p class='tooltip-text'>2 Blue Plant</p>	
+						<p class='tooltip-text'>7 Green Plant</p>
+						<p class='tooltip-text'>30 Ambernite</p>
+						<p class='tooltip-text'>20 Coco</p>
+						<p class='tooltip-text'>20 Horn</p>
+						<p class='tooltip-text'>20 Hornet</p>
+						<p class='tooltip-text'>60 Poison Spore</p>
+						<p class='tooltip-text'>20 Poporing</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+
+		<div class='maps mjolnir_08 portal-bottom portal-right'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>mjolnir_08</a>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>mjolnir_08</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class=''>
+						<p class='tooltip-text'>2 Blue Plant</p>	
+						<p class='tooltip-text'>5 Green Plant</p>
+						<p class='tooltip-text'>20 Horn</p>
+						<p class='tooltip-text'>10 Lunatic</p>
+						<p class='tooltip-text'>15 Poporing</p>
+						<p class='tooltip-text'>55 Stainer</p>
+						<p class='tooltip-text'>30 Yoyo</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+
+		<div class='maps mjolnir_10 portal-bottom portal-right'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>mjolnir_10</a>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>mjolnir_10</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class='bgpink'>
+						<p class='tooltip-text'>1 Angeling</p>	
+						<p class='tooltip-text'>1 Mastering</p>	
+						</div>
+						<div class=''>
+						<p class='tooltip-text'>10 Green Plant</p>	
+						<p class='tooltip-text'>1 Shining Plant</p>
+						<p class='tooltip-text'>60 Argiope</p>
+						<p class='tooltip-text'>30 Argos</p>
+						<p class='tooltip-text'>20 Poring</p>
+						</div>
+					</div>
+				</div>
+				
+				<div class='map-indicators'>
+					<div class='miniboss-icon'></div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+
+		<div class='maps mjolnir_11'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>mjolnir_11</a>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>mjolnir_11</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class=''>
+						<p class='tooltip-text'>2 Blue Plant</p>	
+						<p class='tooltip-text'>11 Green Plant</p>
+						<p class='tooltip-text'>10 Argiope</p>
+						<p class='tooltip-text'>60 Flora</p>
+						<p class='tooltip-text'>30 Male Thief Bug</p>
+						<p class='tooltip-text'>50 Mandragora</p>
+						<p class='tooltip-text'>10 Poporing</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</div>	
+				
+													<!-- SECTION DIVIDER -->
+
+	<div class='section'>
+	
+		<div class='maps nif_fild01 portal-right indent-top2'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>nif_fild01</a>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>nif_fild01</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class=''>
+						<p class='tooltip-text'>50 Disguise</p>	
+						<p class='tooltip-text'>20 Dullahan</p>
+						<p class='tooltip-text'>10 Gibbet</p>
+						<p class='tooltip-text'>10 Hylozoist</p>
+						<p class='tooltip-text'>30 Quve</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+		
+		<div class='maps nif_fild02 portal-right indent-top2'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>nif_fild02</a>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>nif_fild02</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class=''>
+						<p class='tooltip-text'>11 Bloody Murderer</p>	
+						<p class='tooltip-text'>10 Dullahan</p>
+						<p class='tooltip-text'>20 Gibbet</p>
+						<p class='tooltip-text'>10 Hylozoist</p>
+						<p class='tooltip-text'>21 Loli Ruri</p>
+						<p class='tooltip-text'>10 Lude</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+		
+		<div class='maps niflheim indent-top2'>
+			<div class='overlay'>
+				<a href='#' class='town-name'>Niflheim</a>
+				
+				<div class='map-indicators'>
+					<div class='boss-icon'></div>
+				</div>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>Niflheim</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class='bgred'>
+						<p class='tooltip-text'>1 Lord of Death</p>
+						</div>
+						<div class=''>
+						<p class='tooltip-text'>5 Dullahan</p>
+						<p class='tooltip-text'>10 Gibbet</p>
+						<p class='tooltip-text'>10 Hylozoist</p>
+						<p class='tooltip-text'>20 Lude</p>
+						<p class='tooltip-text'>20 Quve</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+<!-- MAP DIVIDER -->
+
+		<div class='maps gef_fild08 indent-one portal-bottom portal-right'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>gef_fild08</a>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>gef_fild08</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class=''>
+						<p class='tooltip-text'>8 Blue Plant</p>	
+						<p class='tooltip-text'>40 Golem</p>
+						<p class='tooltip-text'>20 Kobold Axe</p>
+						<p class='tooltip-text'>40 Kobold Hammer</p>
+						<p class='tooltip-text'>20 Kobold Mace</p>
+						<p class='tooltip-text'>20 Poison Spore</p>
+						<p class='tooltip-text'>20 Steel Chonchon</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+
+		<div class='maps gef_fild07 portal-bottom portal-right'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>gef_fild07</a>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>gef_fild07</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class=''>
+						<p class='tooltip-text'>1 Blue Plant</p>
+						<p class='tooltip-text'>15 Green Plant</p>
+						<p class='tooltip-text'>1 Shining Plant</p>
+						<p class='tooltip-text'>30 Chonchon</p>
+						<p class='tooltip-text'>60 Fabre</p>
+						<p class='tooltip-text'>20 Poring</p>
+						<p class='tooltip-text'>10 Pupa</p>
+						<p class='tooltip-text'>30 Roda Frog</p>
+						<p class='tooltip-text'>30 Willow</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+
+		<div class='maps geffen portal-right'>
+			<div class='overlay'>
+				<a href='#' class='town-name'>Geffen</a>
+				
+				<div class='map-indicators'>
+					<div class='dungeon-icon'></div>
+				</div>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>Geffen</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class='bgblue'>
+						<p class='tooltip-text'>Geffen Dungeon</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+
+		<div class='maps gef_fild00 portal-bottom portal-right'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>gef_fild00</a>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>gef_fild00</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class=''>
+						<p class='tooltip-text'>2 Blue Plant</p>
+						<p class='tooltip-text'>17 Green Plant</p>
+						<p class='tooltip-text'>10 Ambernite</p>
+						<p class='tooltip-text'>30 Chonchon</p>
+						<p class='tooltip-text'>50 Fabre</p>
+						<p class='tooltip-text'>50 Poring</p>
+						<p class='tooltip-text'>20 Pupa</p>
+						<p class='tooltip-text'>15 Roda Frog</p>
+						<p class='tooltip-text'>40 Willow</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+
+		<div class='maps prt_fild00 portal-bottom portal-right'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>prt_fild00</a>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>prt_fild00</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class=''>
+						<p class='tooltip-text'>5 Green Plant</p>
+						<p class='tooltip-text'>1 Shining Plant</p>
+						<p class='tooltip-text'>10 Creamy</p>
+						<p class='tooltip-text'>20 Fabre</p>
+						<p class='tooltip-text'>70 Hornet</p>
+						<p class='tooltip-text'>30 Lunatic</p>
+						<p class='tooltip-text'>40 Poring</p>
+						<p class='tooltip-text'>30 Pupa</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+
+		<div class='maps mjolnir_09 portal-bottom portal-right'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>mjolnir_09</a>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>mjolnir_09</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class=''>
+						<p class='tooltip-text'>11 Red Mushroom</p>
+						<p class='tooltip-text'>10 Coco</p>
+						<p class='tooltip-text'>70 Horn</p>
+						<p class='tooltip-text'>20 Poporing</p>
+						<p class='tooltip-text'>20 Stainer</p>
+						<p class='tooltip-text'>30 Wolf</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+
+		<div class='maps prt_fild01 portal-bottom portal-right'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>prt_fild01</a>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>prt_fild01</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class='bgblue'>
+						<p class='tooltip-text'>Hidden Temple</p>
+						</div>
+						<div class=''>
+						<p class='tooltip-text'>1 Blue Plant</p>
+						<p class='tooltip-text'>6 Green Plant</p>
+						<p class='tooltip-text'>20 Fabre</p>
+						<p class='tooltip-text'>80 Lunatic</p>
+						<p class='tooltip-text'>30 Poring</p>
+						<p class='tooltip-text'>10 Pupa</p>
+						<p class='tooltip-text'>30 Thief Bug</p>
+						</div>
+					</div>
+				</div>
+				
+				<div class='map-indicators'>
+					<div class='dungeon-icon'></div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+
+		<div class='maps prt_fild02 portal-bottom portal-right'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>prt_fild02</a>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>prt_fild02</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class='bgpink'>
+						<p class='tooltip-text'>1 Eclipse</p>
+						</div>
+						<div class=''>
+						<p class='tooltip-text'>3 Shining Plant</p>	
+						<p class='tooltip-text'>50 Fabre</p>
+						<p class='tooltip-text'>10 Lunatic</p>
+						<p class='tooltip-text'>70 Mandragora</p>
+						<p class='tooltip-text'>30 Poring</p>
+						<p class='tooltip-text'>20 Pupa</p>
+						</div>
+					</div>
+				</div>
+				
+				<div class='map-indicators'>
+					<div class='miniboss-icon'></div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+
+		<div class='maps prt_fild03 portal-right'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>prt_fild03</a>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>prt_fild03</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class='bgpink'>
+						<p class='tooltip-text'>1 Choco</p>
+						</div>
+						<div class=''>
+						<p class='tooltip-text'>2 Blue Plant</p>
+						<p class='tooltip-text'>20 Green Plant</p>	
+						<p class='tooltip-text'>10 Poporing</p>
+						<p class='tooltip-text'>40 Smokie</p>
+						<p class='tooltip-text'>80 Yoyo</p>
+						</div>
+					</div>
+				</div>
+				
+				<div class='map-indicators'>
+					<div class='miniboss-icon'></div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+
+		<div class='maps prt_monk'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>prt_monk</a>
+			</div>
+		</div>
+		
+	</div>	
+													
+													<!-- SECTION DIVIDER -->
+	<div class='section'>
+												
+		<div class='maps prt_gld indent-10maps valkyrie-realm portal-bottom'>
+			<div class='overlay'>
+				<a href='#' class='castle-name-small'>Valkyrie Realm</a>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>prt_gld</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class='bgviolet'>
+						<p class='tooltip-text'>Fadhgridh</p>	
+						<p class='tooltip-text'>Gondul</p>
+						<p class='tooltip-text'>Kriemhild</p>
+						<p class='tooltip-text'>Skoegul</p>
+						<p class='tooltip-text'>Swanhild</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+				
+	</div>	
+													<!-- SECTION DIVIDER -->
+													
+	<div class='section'>
+												
+		<div class='maps gef_fild12 indent-4maps portal-right'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>gef_fild12</a>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>gef_fild12</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class='bgpink'>
+						<p class='tooltip-text'>1 Kobold Leader</p>
+						</div>
+						<div class=''>
+						<p class='tooltip-text'>40 Kobold Archer</p>
+						<p class='tooltip-text'>20 Kobold Axe</p>
+						<p class='tooltip-text'>30 Kobold Hammer</p>
+						<p class='tooltip-text'>30 Kobold Mace</p>
+						<p class='tooltip-text'>20 Poporing</p>
+						</div>
+					</div>
+				</div>
+				
+				<div class='map-indicators'>
+					<div class='miniboss-icon'></div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+
+		<div class='maps gef_fild13 portal-bottom portal-right'>
+			<div class='overlay'>
+				<a href='#' class='castle-name'>Britoniah</a>
+
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>gef_fild13</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class='bgviolet'>
+						<p class='tooltip-text'>Bergel</p>
+						<p class='tooltip-text'>Eeyorbriggar</p>
+						<p class='tooltip-text'>Mersetzdeitz</p>
+						<p class='tooltip-text'>Repherion</p>
+						<p class='tooltip-text'>Yesnelph</p>
+						</div>
+						<hr/>
+						<div class=''>
+						<p class='tooltip-text'>30 Ambernite</p>	
+						<p class='tooltip-text'>40 Creamy</p>
+						<p class='tooltip-text'>20 Poporing</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+				
+<!-- MAP DIVIDER -->
+
+		<div class='maps gef_fild09 portal-bottom portal-right'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>gef_fild09</a>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>gef_fild13</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class=''>
+						<p class='tooltip-text'>10 Red Mushroom</p>	
+						<p class='tooltip-text'>60 Ambernite</p>
+						<p class='tooltip-text'>10 Hornet</p>
+						<p class='tooltip-text'>30 Poring</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+
+		<div class='maps gef_fild01 portal-bottom portal-right'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>gef_fild01</a>
+				
+				<div class='map-indicators'>
+					<div class='miniboss-icon'></div>
+				</div>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>gef_fild01</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class='bgpink'>
+						<p class='tooltip-text'>1 Toad</p>
+						</div>
+						<div class=''>
+						<p class='tooltip-text'>5 Green Plant</p>	
+						<p class='tooltip-text'>35 Hornet</p>
+						<p class='tooltip-text'>20 Poring</p>
+						<p class='tooltip-text'>50 Roda Frog</p>
+						<p class='tooltip-text'>50 Thara Frog</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+
+		<div class='maps prt_fild04 portal-bottom portal-right'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>prt_fild04</a>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>prt_fild04</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class=''>
+						<p class='tooltip-text'>15 Hornet</p>	
+						<p class='tooltip-text'>30 Poring</p>
+						<p class='tooltip-text'>70 Rocker</p>
+						<p class='tooltip-text'>10 Roda Frog</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+
+		<div class='maps prt_fild05 portal-bottom portal-right'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>prt_fild05</a>
+				
+				<div class='map-indicators'>
+					<div class='dungeon-icon'></div>
+				</div>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>prt_fild05</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class='bgblue'>
+						<p class='tooltip-text'>Prontera Culvert</p>
+						</div>
+						<div class=''>
+						<p class='tooltip-text'>1 Blue Plant</p>	
+						<p class='tooltip-text'>6 Green Plant</p>
+						<p class='tooltip-text'>65 Fabre</p>
+						<p class='tooltip-text'>15 Lunatic</p>
+						<p class='tooltip-text'>75 Poring</p>
+						<p class='tooltip-text'>20 Pupa</p>
+						<p class='tooltip-text'>10 Roda Frog</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+
+		<div class='maps prontera portal-bottom portal-right'>
+			<div class='overlay'>
+				<a href='#' class='town-name'>Prontera</a>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+
+		<div class='maps prt_fild06'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>prt_fild06</a>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>prt_fild06</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class=''>
+						<p class='tooltip-text'>15 Green Plant</p>	
+						<p class='tooltip-text'>60 Lunatic</p>
+						<p class='tooltip-text'>10 Thief Bug</p>
+						<p class='tooltip-text'>20 Thief Bug Egg</p>
+						<p class='tooltip-text'>60 Poring</p>
+						<p class='tooltip-text'>20 Pupa</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+
+		<div class='maps izlu2dun byalan indent-top indent-half'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>Byalan</a>
+				
+				<div class='map-indicators'>
+					<div class='dungeon-icon'></div>
+				</div>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>izlu2dun</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class='bgblue'>
+						<p class='tooltip-text'>Byalan Dungeon</p>	
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+				
+	</div>	
 													
 													<!-- SECTION DIVIDER -->
 													
+	<div class='section'>
+	
+		<div class='maps umbala indent-1p5 portal-bottom'>
+			<div class='overlay'>
+				<a href='#' class='town-name'>Umbala</a>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+
+		<div class='maps gef_fild14 indent-2p5 portal-right'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>gef_fild14</a>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>gef_fild14</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class=''>
+						<p class='tooltip-text'>30 Orc Archer</p>	
+						<p class='tooltip-text'>20 Orc Lady</p>
+						<p class='tooltip-text'>10 Orc Warrior</p>
+						<p class='tooltip-text'>90 High Orc</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+
+		<div class='maps gef_fild10 portal-bottom portal-right'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>gef_fild10</a>
+				
+				<div class='map-indicators'>
+					<div class='boss-icon'></div>
+					<div class='dungeon-icon'></div>
+				</div>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>gef_fild10</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class='bgred'>
+						<p class='tooltip-text'>1 Orc Hero</p>
+						</div>
+						<div class='bgblue'>
+						<p class='tooltip-text'>Orc Dungeon</p>
+						</div>
+						<div class=''>
+						<p class='tooltip-text'>6 Blue Plant</p>	
+						<p class='tooltip-text'>3 Green Plant</p>
+						<p class='tooltip-text'>5 Horn</p>
+						<p class='tooltip-text'>5 Orc Baby</p>
+						<p class='tooltip-text'>45 Orc Lady</p>
+						<p class='tooltip-text'>80 Orc Warrior</p>
+						<p class='tooltip-text'>10 Poporing</p>
+						<p class='tooltip-text'>5 Yoyo</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+
+		<div class='maps gef_fild03 portal-bottom portal-right'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>gef_fild03</a>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>gef_fild03</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class=''>
+						<p class='tooltip-text'>21 Green Plant</p>	
+						<p class='tooltip-text'>85 Coco</p>
+						<p class='tooltip-text'>20 Poporing</p>
+						<p class='tooltip-text'>45 Smokie</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+
+		<div class='maps gef_fild02 portal-bottom portal-right'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>gef_fild02</a>
+				
+				<div class='map-indicators'>
+					<div class='boss-icon'></div>
+					<div class='miniboss-icon'></div>
+				</div>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>gef_fild02</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class='bgred'>
+						<p class='tooltip-text'>1 Orc Hero</p>
+						</div>
+						<div class='bgpink'>
+						<p class='tooltip-text'>1 Choco</p>
+						</div>
+						<div class=''>
+						<p class='tooltip-text'>4 Blue Plant</p>	
+						<p class='tooltip-text'>8 Green Plant</p>
+						<p class='tooltip-text'>1 Shining Plant</p>
+						<p class='tooltip-text'>5 Red Mushroom</p>
+						<p class='tooltip-text'>10 Coco</p>	
+						<p class='tooltip-text'>60 Orc Warrior</p>
+						<p class='tooltip-text'>10 Smokie</p>
+						<p class='tooltip-text'>10 Yoyo</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+
+		<div class='maps prt_fild07 portal-bottom portal-right'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>prt_fild07</a>
+				
+				<div class='map-indicators'>
+					<div class='miniboss-icon'></div>
+				</div>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>prt_fild07</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class='bgpink'>
+						<p class='tooltip-text'>1 Vocal</p>
+						</div>
+						<div class=''>
+						<p class='tooltip-text'>35 Creamy</p>	
+						<p class='tooltip-text'>30 Fabre</p>
+						<p class='tooltip-text'>20 Lunatic</p>
+						<p class='tooltip-text'>30 Poring</p>
+						<p class='tooltip-text'>80 Rocker</p>
+						<p class='tooltip-text'>20 Roda Frog</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+
+		<div class='maps prt_fild08 portal-bottom portal-right'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>prt_fild08</a>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>prt_fild08</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class=''>
+						<p class='tooltip-text'>10 Drops</p>	
+						<p class='tooltip-text'>40 Lunatic</p>
+						<p class='tooltip-text'>70 Poring</p>
+						<p class='tooltip-text'>20 Pupa</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+
+		<div class='maps izlude'>
+			<div class='overlay'>
+				<a href='#' class='town-name'>izlude</a>
+			</div>
+		</div>
+		
+	</div>	
+													
 													<!-- SECTION DIVIDER -->
+													
+	<div class='section'>
+	
+		<div class='maps um_fild04 indent-1p5 portal-bottom'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>um_fild04</a>
+				
+				<div class='map-indicators'>
+					<div class='miniboss-icon'></div>
+				</div>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>um_fild04</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class='bgpink'>
+						<p class='tooltip-text'>2 Choco</p>
+						</div>
+						<div class=''>
+						<p class='tooltip-text'>5 Red Plant</p>	
+						<p class='tooltip-text'>5 Yellow Plant</p>
+						<p class='tooltip-text'>1 Shining Plant</p>
+						<p class='tooltip-text'>50 Beetle King</p>
+						<p class='tooltip-text'>21 Horn</p>
+						<p class='tooltip-text'>10 Wootan Shooter</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+
+		<div class='maps gef_fild11 indent-3p5 portal-right'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>gef_fild11</a>
+				
+				<div class='map-indicators'>
+					<div class='miniboss-icon'></div>
+				</div>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>gef_fild11</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class='bgpink'>
+						<p class='tooltip-text'>1 Goblin Leader</p>
+						</div>
+						<div class=''>
+						<p class='tooltip-text'>21 Black Mushroom</p>	
+						<p class='tooltip-text'>20 Goblin Archer</p>
+						<p class='tooltip-text'>20 Goblin Axe</p>
+						<p class='tooltip-text'>30 Goblin Dagger</p>
+						<p class='tooltip-text'>20 Goblin Flail</p>
+						<p class='tooltip-text'>20 Goblin Hammer</p>	
+						<p class='tooltip-text'>20 Goblin Mace</p>
+						<p class='tooltip-text'>15 Poporing</p>
+						<p class='tooltip-text'>10 Rotar Zairo</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+		
+		<div class='maps prt_fild11 portal-right'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>prt_fild11</a>
+				
+				<div class='map-indicators'>
+					<div class='miniboss-icon'></div>
+				</div>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>prt_fild11</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class='bgpink'>
+						<p class='tooltip-text'>1 Panzer Goblin</p>
+						</div>
+						<div class=''>
+						<p class='tooltip-text'>10 Red Mushroom</p>	
+						<p class='tooltip-text'>50 Coco</p>
+						<p class='tooltip-text'>30 Elder Willow</p>
+						<p class='tooltip-text'>10 Lunatic</p>
+						<p class='tooltip-text'>10 Poporing</p>
+						<p class='tooltip-text'>55 Savage</p>
+						<p class='tooltip-text'>80 Savage Babe</p>
+						<p class='tooltip-text'>15 Yoyo</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+		
+		<div class='maps prt_fild10 portal-br portal-right'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>prt_fild10</a>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>prt_fild10</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class=''>
+						<p class='tooltip-text'>15 Red Mushroom</p>
+						<p class='tooltip-text'>1 Shining Plant</p>
+						<p class='tooltip-text'>10 Creamy</p>
+						<p class='tooltip-text'>60 Elder Willow</p>
+						<p class='tooltip-text'>10 Lunatic</p>
+						<p class='tooltip-text'>15 Poporing</p>
+						<p class='tooltip-text'>45 Savage Babe</p>
+						<p class='tooltip-text'>5 Willow</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+		
+		<div class='maps prt_fild09 portal-bl portal-br'>
+			<div class='overlay portal-right'>
+				<a href='#' class='field-name'>prt_fild09</a>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>prt_fild09</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class=''>
+						<p class='tooltip-text'>3 Yellow Plant</p>	
+						<p class='tooltip-text'>20 Baby Desert Wolf</p>
+						<p class='tooltip-text'>10 Condor</p>
+						<p class='tooltip-text'>20 Peco Peco Egg</p>
+						<p class='tooltip-text'>20 Picky</p>
+						<p class='tooltip-text'>70 Savage Babe</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+		
+		<div class='maps moc_fild01 portal-bl portal-br'>
+			<div class='overlay portal-right'>
+				<a href='#' class='field-name'>moc_fild01</a>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>moc_fild01</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class=''>
+						<p class='tooltip-text'>7 Yellow Plant</p>	
+						<p class='tooltip-text'>20 Condor</p>
+						<p class='tooltip-text'>30 Drops</p>
+						<p class='tooltip-text'>35 Peco Peco</p>
+						<p class='tooltip-text'>20 Peco Peco Egg</p>
+						<p class='tooltip-text'>45 Picky</p>
+						<p class='tooltip-text'>45 Picky Shell</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+		
+		<div class='maps pay_fild04 portal-bl'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>pay_fild04</a>
+				
+				<div class='map-indicators'>
+					<div class='miniboss-icon'></div>
+				</div>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>pay_fild04</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class='bgpink'>
+						<p class='tooltip-text'>1 Angeling</p>
+						<p class='tooltip-text'>1 Deviling</p>
+						<p class='tooltip-text'>1 Ghostring</p>
+						<p class='tooltip-text'>1 Mastering</p>
+						</div>
+						<div class=''>
+						<p class='tooltip-text'>1 Green Plant</p>	
+						<p class='tooltip-text'>2 Shining Plant</p>
+						<p class='tooltip-text'>3 Drops</p>
+						<p class='tooltip-text'>4 Poring</p>
+						<p class='tooltip-text'>5 Poporing</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+		
+		<div class='maps pay_arche indent-half archer-village portal-bottom'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>Archer Village</a>
+				
+				<div class='map-indicators'>
+					<div class='dungeon-icon'></div>
+				</div>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>pay_arche</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class='bgblue'>
+						<p class='tooltip-text'>Payon Dungeon</p>	
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</div>	
+													
+													<!-- SECTION DIVIDER -->
+													
+	<div class='section'>
+	
+		<div class='maps um_fild01 indent-half portal-right'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>um_fild01</a>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>um_fild01</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class=''>
+						<p class='tooltip-text'>10 Green Plant</p>	
+						<p class='tooltip-text'>10 Yellow Plant</p>
+						<p class='tooltip-text'>5 Shining Plant</p>
+						<p class='tooltip-text'>65 Dryad</p>
+						<p class='tooltip-text'>10 Dustiness</p>
+						<p class='tooltip-text'>2 Harpy</p>
+						<p class='tooltip-text'>15 Stem Worm</p>
+						<p class='tooltip-text'>10 Wootan Fighter</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+
+		<div class='maps um_fild02 portal-right'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>um_fild02</a>
+				
+				<div class='map-indicators'>
+					<div class='miniboss-icon'></div>
+				</div>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>um_fild02</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class='bgpink'>
+						<p class='tooltip-text'>5 Choco</p>
+						</div>
+						<div class=''>
+						<p class='tooltip-text'>5 Red Plant</p>	
+						<p class='tooltip-text'>5 Yellow Plant</p>
+						<p class='tooltip-text'>30 Beetle King</p>
+						<p class='tooltip-text'>10 Coco</p>
+						<p class='tooltip-text'>20 Dustiness</p>
+						<p class='tooltip-text'>3 Flora</p>
+						<p class='tooltip-text'>25 Stone Shooter</p>
+						<p class='tooltip-text'>50 Wootan Fighter</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+
+		<div class='maps um_fild03 portal-bottom'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>um_fild03</a>
+				
+				<div class='map-indicators'>
+					<div class='miniboss-icon'></div>
+				</div>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>um_fild03</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class='bgpink'>
+						<p class='tooltip-text'>1 Gryphon</p>
+						</div>
+						<div class=''>
+						<p class='tooltip-text'>5 Blue Plant</p>	
+						<p class='tooltip-text'>10 Green Plant</p>
+						<p class='tooltip-text'>2 Shining Plant</p>
+						<p class='tooltip-text'>10 Alligator</p>
+						<p class='tooltip-text'>20 Dragon Tail</p>
+						<p class='tooltip-text'>95 Parasite</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+
+		<div class='maps moc_ruins indent-2maps portal-bottom portal-angle'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>moc_ruins</a>
+				
+				<div class='map-indicators'>
+					<div class='dungeon-icon'></div>
+				</div>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>moc_ruins</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class='bgblue'>
+						<p class='tooltip-text'>Pyramids</p>	
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+
+		<div class='maps moc_fild07 portal-bottom portal-right'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>moc_fild07</a>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>moc_fild07</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class=''>
+						<p class='tooltip-text'>5 Yellow Plant</p>	
+						<p class='tooltip-text'>70 Drops</p>
+						<p class='tooltip-text'>50 Peco Peco Egg</p>
+						<p class='tooltip-text'>30 Picky</p>
+						<p class='tooltip-text'>30 Picky Shell</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+
+		<div class='maps moc_fild06 portal-bottom portal-right'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>moc_fild06</a>
+				
+				<div class='map-indicators'>
+					<div class='miniboss-icon'></div>
+				</div>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>moc_fild06</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class='bgpink'>
+						<p class='tooltip-text'>1 Dragon Fly</p>
+						</div>
+						<div class=''>
+						<p class='tooltip-text'>10 Yellow Plant</p>	
+						<p class='tooltip-text'>45 Baby Desert Wolf</p>
+						<p class='tooltip-text'>45 Chonchon</p>
+						<p class='tooltip-text'>30 Condor</p>
+						<p class='tooltip-text'>25 Drops</p>	
+						<p class='tooltip-text'>35 Muka</p>
+						<p class='tooltip-text'>10 Peco Peco Egg</p>
+						<p class='tooltip-text'>30 Picky</p>
+						<p class='tooltip-text'>30 Picky Shell</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+
+		<div class='maps moc_fild05 portal-bottom portal-right'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>moc_fild05</a>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>moc_fild05</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class=''>
+						<p class='tooltip-text'>5 Yellow Plant</p>	
+						<p class='tooltip-text'>20 Chonchon</p>
+						<p class='tooltip-text'>35 Condor</p>
+						<p class='tooltip-text'>45 Desert Wolf</p>
+						<p class='tooltip-text'>20 Drops</p>
+						<p class='tooltip-text'>10 Peco Peco Egg</p>
+						<p class='tooltip-text'>15 Picky</p>
+						<p class='tooltip-text'>15 Picky Shell</p>
+						<p class='tooltip-text'>70 Steel Chonchon</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+
+		<div class='maps moc_fild04 portal-bottom portal-right'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>moc_fild04</a>
+				
+				<div class='map-indicators'>
+					<div class='dungeon-icon'></div>
+				</div>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>moc_fild04</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class='bgblue'>
+						<p class='tooltip-text'>Anthell</p>	
+						</div>
+						<div class=''>
+						<p class='tooltip-text'>20 Chonchon</p>	
+						<p class='tooltip-text'>35 Condor</p>
+						<p class='tooltip-text'>20 Desert Wolf</p>
+						<p class='tooltip-text'>75 Peco Peco</p>
+						<p class='tooltip-text'>10 Peco Peco Egg</p>
+						<p class='tooltip-text'>15 Picky</p>
+						<p class='tooltip-text'>15 Picky Shell</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+
+		<div class='maps moc_fild02 portal-bottom portal-right'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>moc_fild02</a>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>moc_fild02</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class=''>
+						<p class='tooltip-text'>7 Green Plant</p>	
+						<p class='tooltip-text'>7 Yellow Plant</p>
+						<p class='tooltip-text'>25 Condor</p>
+						<p class='tooltip-text'>15 Peco Peco Egg</p>
+						<p class='tooltip-text'>50 Picky</p>
+						<p class='tooltip-text'>50 Picky Shell</p>
+						<p class='tooltip-text'>50 Savage Babe</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+
+		<div class='maps pay_gld portal-right'>
+			<div class='overlay'>
+				<a href='#' class='castle-name-small'>Greenwood Lake</a>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>pay_gld</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class='bgviolet'>
+						<p class='tooltip-text'>Bamboo Grove Hill</p>	
+						<p class='tooltip-text'>Bright Arbor</p>
+						<p class='tooltip-text'>Holy Shadow</p>
+						<p class='tooltip-text'>Sacred Altar</p>
+						<p class='tooltip-text'>Scarlet Palace</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+
+		<div class='maps payon portal-bottom portal-right'>
+			<div class='overlay'>
+				<a href='#' class='town-name'>Payon</a>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+
+		<div class='maps pay_fild08 portal-bottom portal-right'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>pay_fild08</a>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>pay_fild08</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class=''>
+						<p class='tooltip-text'>10 Green Plant</p>	
+						<p class='tooltip-text'>1 Shining Plant</p>
+						<p class='tooltip-text'>5 Bigfoot</p>
+						<p class='tooltip-text'>60 Elder Willow</p>
+						<p class='tooltip-text'>15 Poporing</p>
+						<p class='tooltip-text'>40 Smokie</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+
+		<div class='maps pay_fild09 portal-bottom'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>pay_fild09</a>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>pay_fild09</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class=''>
+						<p class='tooltip-text'>10 Green Plant</p>	
+						<p class='tooltip-text'>1 Shining Plant</p>
+						<p class='tooltip-text'>15 Bigfoot</p>
+						<p class='tooltip-text'>20 Eggyra</p>
+						<p class='tooltip-text'>40 Elder Willow</p>
+						<p class='tooltip-text'>10 Greatest General</p>
+						<p class='tooltip-text'>10 Poporing</p>
+						<p class='tooltip-text'>8 Sohee</p>
+						<p class='tooltip-text'>1 Wanderer</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</div>	
+													
+													<!-- SECTION DIVIDER -->
+													
+	<div class='section'>
+	
+		<div class='maps cmd_fild01 indent-2p5 portal-bottom portal-right'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>cmd_fild01</a>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>cmd_fild01</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class=''>
+						<p class='tooltip-text'>52 Blue Plant</p>	
+						<p class='tooltip-text'>5 Green Plant</p>
+						<p class='tooltip-text'>1 Shining Plant</p>
+						<p class='tooltip-text'>60 Alligator</p>
+						<p class='tooltip-text'>20 Poison Spore	</p>
+						<p class='tooltip-text'>30 Poporing</p>
+						<p class='tooltip-text'>30 Savage</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+
+		<div class='maps cmd_fild03 portal-bottom'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>cmd_fild03</a>
+				
+				<div class='map-indicators'>
+					<div class='miniboss-icon'></div>
+				</div>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>cmd_fild03</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class='bgpink'>
+						<p class='tooltip-text'>1 Mutant Dragonoid</p>
+						<p class='tooltip-text'>1 Toad</p>
+						</div>
+						<div class=''>
+						<p class='tooltip-text'>1 Shining Plant</p>	
+						<p class='tooltip-text'>90 Anolian</p>
+						<p class='tooltip-text'>30 Pest</p>
+						<p class='tooltip-text'>10 Poporing</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+
+		<div class='maps moc_fild19 indent-one portal-right'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>moc_fild19</a>
+				
+				<div class='map-indicators'>
+					<div class='dungeon-icon'></div>
+				</div>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>moc_fild19</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class='bgblue'>
+						<p class='tooltip-text'>Sphinx</p>	
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+
+		<div class='maps morocc portal-bottom portal-right'>
+			<div class='overlay'>
+				<a href='#' class='town-name'>Morocc</a>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+
+		<div class='maps moc_fild10 portal-bottom portal-right'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>moc_fild10</a>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>moc_fild10</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class=''>
+						<p class='tooltip-text'>5 Green Plant</p>	
+						<p class='tooltip-text'>10 Yellow Plant</p>
+						<p class='tooltip-text'>30 Condor</p>
+						<p class='tooltip-text'>35 Peco Peco</p>
+						<p class='tooltip-text'>10 Peco Peco Egg</p>
+						<p class='tooltip-text'>45 Picky</p>
+						<p class='tooltip-text'>45 Picky Shell</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+
+		<div class='maps moc_fild09 portal-bottom portal-right'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>moc_fild09</a>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>moc_fild09</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class=''>
+						<p class='tooltip-text'>10 Yellow Plant</p>	
+						<p class='tooltip-text'>50 Baby Desert Wolf</p>
+						<p class='tooltip-text'>30 Condor</p>
+						<p class='tooltip-text'>35 Muka</p>
+						<p class='tooltip-text'>10 Peco Peco Egg</p>
+						<p class='tooltip-text'>20 Picky</p>
+						<p class='tooltip-text'>20 Picky Shell</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+
+		<div class='maps moc_fild08 portal-bottom portal-right'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>moc_fild08</a>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>moc_fild08</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class=''>
+						<p class='tooltip-text'>15 Baby Desert Wolf</p>	
+						<p class='tooltip-text'>40 Golem</p>
+						<p class='tooltip-text'>30 Metaller</p>
+						<p class='tooltip-text'>20 Scorpion</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+
+		<div class='maps moc_fild13 portal-right'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>moc_fild13</a>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>moc_fild13</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class=''>
+						<p class='tooltip-text'>13 Red Mushroom</p>	
+						<p class='tooltip-text'>14 Yellow Plant</p>
+						<p class='tooltip-text'>65 Boa</p>
+						<p class='tooltip-text'>20 Chonchon</p>
+						<p class='tooltip-text'>45 Peco Peco</p>
+						<p class='tooltip-text'>10 Peco Peco Egg</p>
+						<p class='tooltip-text'>45 Picky</p>
+						<p class='tooltip-text'>35 Picky Shell</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+
+		<div class='maps moc_fild03 portal-bottom portal-right'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>moc_fild03</a>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>moc_fild03</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class=''>
+						<p class='tooltip-text'>14 Green Plant</p>	
+						<p class='tooltip-text'>25 Boa</p>
+						<p class='tooltip-text'>15 Lunatic</p>
+						<p class='tooltip-text'>70 Poring</p>
+						<p class='tooltip-text'>20 Roda Frog</p>
+						<p class='tooltip-text'>15 Willow</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+
+		<div class='maps pay_fild01 portal-bottom portal-right'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>pay_fild01</a>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>pay_fild01</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class=''>
+						<p class='tooltip-text'>15 Black Mushroom</p>	
+						<p class='tooltip-text'>45 Fabre</p>
+						<p class='tooltip-text'>10 Lunatic</p>
+						<p class='tooltip-text'>75 Poring</p>
+						<p class='tooltip-text'>25 Pupa</p>
+						<p class='tooltip-text'>80 Willow</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+
+		<div class='maps pay_fild07 portal-bottom portal-right'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>pay_fild07</a>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>pay_fild07</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class=''>
+						<p class='tooltip-text'>8 Green Plant</p>	
+						<p class='tooltip-text'>15 Bigfoot</p>
+						<p class='tooltip-text'>60 Caramel</p>
+						<p class='tooltip-text'>40 Dokebi</p>
+						<p class='tooltip-text'>40 Eggyra</p>
+						<p class='tooltip-text'>20 Poison Spore</p>
+						<p class='tooltip-text'>10 Poporing</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+
+		<div class='maps pay_fild10'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>pay_fild10</a>
+				
+				<div class='map-indicators'>
+					<div class='boss-icon'></div>
+				</div>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>pay_fild10</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class='bgred'>
+						<p class='tooltip-text'>1 Eddga</p>
+						</div>
+						<div class=''>
+						<p class='tooltip-text'>15 Green Plant</p>	
+						<p class='tooltip-text'>10 Bigfoot</p>
+						<p class='tooltip-text'>20 Eggyra</p>
+						<p class='tooltip-text'>45 Greatest General</p>
+						<p class='tooltip-text'>30 Horong</p>
+						<p class='tooltip-text'>20 Poison Spore</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+
+		<div class='maps alb2trea indent-half indent-top'>
+			<div class='overlay'>
+				<a href='#' class='field-name-small'>Sunken ship</a>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>alb2trea</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class='bgblue'>
+						<p class='tooltip-text'>Sunken Ship</p>	
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</div>	
+													
+													<!-- SECTION DIVIDER -->
+													
+	<div class='section'>
+	
+		<div class='maps comodo indent-half'>
+			<div class='overlay'>
+				<a href='#' class='town-name'>Comodo</a>
+				
+				<div class='map-indicators'>
+					<div class='dungeon-icon'></div>
+				</div>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>Comodo</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class='bgblue'>
+						<p class='tooltip-text'>Beach Dungeon</p>	
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+
+		<div class='maps cmd_fild02 indent-one portal-right'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>cmd_fild02</a>
+				
+				<div class='map-indicators'>
+					<div class='miniboss-icon'></div>
+				</div>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>cmd_fild02</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class='bgpink'>
+						<p class='tooltip-text'>1 Mobster</p>
+						</div>
+						<div class=''>
+						<p class='tooltip-text'>10 Alligator</p>	
+						<p class='tooltip-text'>10 Aster</p>
+						<p class='tooltip-text'>15 Cornutus</p>
+						<p class='tooltip-text'>20 Crab</p>
+						<p class='tooltip-text'>20 Galapago</p>
+						<p class='tooltip-text'>32 Raggler</p>
+						<p class='tooltip-text'>20 Seal</p>
+						<p class='tooltip-text'>40 Shellfish</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+
+		<div class='maps cmd_fild04 portal-right'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>cmd_fild04</a>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>cmd_fild04</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class=''>
+						<p class='tooltip-text'>40 Alligator</p>	
+						<p class='tooltip-text'>45 Aster</p>
+						<p class='tooltip-text'>20 Crab</p>
+						<p class='tooltip-text'>20 Raggler</p>
+						<p class='tooltip-text'>20 Sea Otter</p>
+						<p class='tooltip-text'>20 Shellfish</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+
+		<div class='maps cmd_fild06 portal-bottom portal-right'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>cmd_fild06</a>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>cmd_fild06</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class=''>
+						<p class='tooltip-text'>5 Yellow Plant</p>	
+						<p class='tooltip-text'>20 Drops</p>
+						<p class='tooltip-text'>47 Goblin Archer</p>
+						<p class='tooltip-text'>1 Harpy</p>
+						<p class='tooltip-text'>27 Kobold Archer</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+
+		<div class='maps cmd_fild08 portal-bottom portal-right'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>cmd_fild08</a>
+				
+				<div class='map-indicators'>
+					<div class='dungeon-icon'></div>
+					<div class='miniboss-icon'></div>
+				</div>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>cmd_fild08</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class='bgpink'>
+						<p class='tooltip-text'>1 Gryphon</p>
+						</div>
+						<div class='bgblue'>
+						<p class='tooltip-text'>Anthell</p>
+						</div>
+						<div class=''>
+						<p class='tooltip-text'>8 Yellow Plant</p>	
+						<p class='tooltip-text'>10 Drops</p>
+						<p class='tooltip-text'>28 Goblin Archer</p>
+						<p class='tooltip-text'>1 Gryphon</p>
+						<p class='tooltip-text'>79 Kobold Archer</p>
+						<p class='tooltip-text'>15 Sandman</p>
+						<p class='tooltip-text'>20 Side Winder</p>
+						<p class='tooltip-text'>25 Stem Worm</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+
+		<div class='maps moc_fild12 portal-bottom portal-right'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>moc_fild12</a>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>moc_fild12</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class=''>
+						<p class='tooltip-text'>10 Yellow Plant</p>	
+						<p class='tooltip-text'>25 Ant Egg</p>
+						<p class='tooltip-text'>20 Chonchon</p>
+						<p class='tooltip-text'>50 Drops</p>
+						<p class='tooltip-text'>45 Picky</p>
+						<p class='tooltip-text'>45 Picky Shell</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+
+		<div class='maps moc_fild11 portal-bottom portal-right'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>moc_fild11</a>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>moc_fild11</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class=''>
+						<p class='tooltip-text'>5 Andre</p>	
+						<p class='tooltip-text'>40 Ant Egg</p>
+						<p class='tooltip-text'>15 Chonchon</p>
+						<p class='tooltip-text'>5 Deniro</p>
+						<p class='tooltip-text'>70 Drops</p>
+						<p class='tooltip-text'>10 Picky</p>
+						<p class='tooltip-text'>10 Picky Shell</p>
+						<p class='tooltip-text'>5 Piere</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+
+		<div class='maps moc_fild15 portal-bottom portal-right'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>moc_fild15</a>
+				
+				<div class='map-indicators'>
+					<div class='dungeon-icon'></div>
+				</div>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>moc_fild15</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class='bgblue'>
+						<p class='tooltip-text'>Anthell</p>
+						</div>
+						<div class=''>
+						<p class='tooltip-text'>12 Yellow Plant</p>	
+						<p class='tooltip-text'>25 Andre</p>
+						<p class='tooltip-text'>20 Ant Egg</p>
+						<p class='tooltip-text'>25 Deniro</p>
+						<p class='tooltip-text'>25 Piere</p>
+						<p class='tooltip-text'>35 Scorpion</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+
+		<div class='maps moc_fild14'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>moc_fild14</a>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>moc_fild14</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class=''>
+						<p class='tooltip-text'>25 Baby Desert Wolf</p>	
+						<p class='tooltip-text'>38 Desert Wolf</p>
+						<p class='tooltip-text'>25 Hode</p>
+						<p class='tooltip-text'>20 Metaller</p>
+						<p class='tooltip-text'>30 Scorpion</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+
+		<div class='maps pay_fild11 indent-one portal-right'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>pay_fild11</a>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>pay_fild11</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class=''>
+						<p class='tooltip-text'>6 Red Mushroom</p>	
+						<p class='tooltip-text'>1 Brilight</p>
+						<p class='tooltip-text'>10 Dustiness</p>
+						<p class='tooltip-text'>20 Fabre</p>
+						<p class='tooltip-text'>15 Horn</p>
+						<p class='tooltip-text'>10 Pupa</p>
+						<p class='tooltip-text'>25 Stainer</p>
+						<p class='tooltip-text'>1 Stem Worm</p>
+						<p class='tooltip-text'>65 Wormtail</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+
+		<div class='maps pay_fild02 portal-bottom portal-right'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>pay_fild02</a>
+				
+				<div class='map-indicators'>
+					<div class='miniboss-icon'></div>
+				</div>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>pay_fild02</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class='bgpink'>
+						<p class='tooltip-text'>1 Vagabond Wolf</p>
+						</div>
+						<div class=''>
+						<p class='tooltip-text'>4 Green Plant</p>	
+						<p class='tooltip-text'>4 Red Mushroom</p>
+						<p class='tooltip-text'>10 Boa</p>
+						<p class='tooltip-text'>20 Fabre</p>
+						<p class='tooltip-text'>15 Female Thief Bug</p>
+						<p class='tooltip-text'>10 Lunatic</p>	
+						<p class='tooltip-text'>20 Poring</p>
+						<p class='tooltip-text'>15 Pupa</p>
+						<p class='tooltip-text'>20 Willow</p>
+						<p class='tooltip-text'>80 Wolf</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+
+		<div class='maps pay_fild03 portal-bottom portal-right'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>pay_fild03</a>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>pay_fild03</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class=''>
+						<p class='tooltip-text'>4 Green Plant</p>	
+						<p class='tooltip-text'>6 Red Mushroom</p>
+						<p class='tooltip-text'>15 Lunatic</p>
+						<p class='tooltip-text'>30 Poring</p>
+						<p class='tooltip-text'>60 Pupa</p>
+						<p class='tooltip-text'>30 Willow</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+
+		<div class='maps alberta'>
+			<div class='overlay'>
+				<a href='#' class='town-name'>Alberta</a>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+
+	</div>	
+													
+													<!-- SECTION DIVIDER -->
+													
+	<div class='section'>
+	
+		<div class='maps cmd_fild07 indent-4p5'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>cmd_fild07</a>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>cmd_fild07</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class=''>
+						<p class='tooltip-text'>5 Aster</p>	
+						<p class='tooltip-text'>5 Crab</p>
+						<p class='tooltip-text'>20 Drops</p>
+						<p class='tooltip-text'>4 Raggler</p>
+						<p class='tooltip-text'>5 Shellfish</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+
+		<div class='maps cmd_fild09 portal-right'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>cmd_fild09</a>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>cmd_fild09</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class=''>
+						<p class='tooltip-text'>60 Anacondaq</p>	
+						<p class='tooltip-text'>20 Condor</p>
+						<p class='tooltip-text'>20 Drops</p>
+						<p class='tooltip-text'>2 Gargoyle</p>
+						<p class='tooltip-text'>3 Hode</p>
+						<p class='tooltip-text'>20 Steel Chonchon</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+
+		<div class='maps moc_fild18 portal-right'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>moc_fild18</a>
+				
+				<div class='map-indicators'>
+					<div class='miniboss-icon'></div>
+				</div>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>moc_fild18</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class='bgpink'>
+						<p class='tooltip-text'>1 Dragon Fly</p>
+						</div>
+						<div class=''>
+						<p class='tooltip-text'>8 Yellow Plant</p>	
+						<p class='tooltip-text'>35 Anacondaq</p>
+						<p class='tooltip-text'>15 Chonchon</p>
+						<p class='tooltip-text'>20 Drops</p>
+						<p class='tooltip-text'>75 Hode</p>
+						<p class='tooltip-text'>40 Muka</p>
+						<p class='tooltip-text'>25 Steel Chonchon</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+
+		<div class='maps moc_fild17 portal-right'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>moc_fild17</a>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>moc_fild17</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class=''>
+						<p class='tooltip-text'>1 Blue Plant</p>	
+						<p class='tooltip-text'>6 Yellow Plant</p>
+						<p class='tooltip-text'>30 Andre</p>
+						<p class='tooltip-text'>35 Drops</p>
+						<p class='tooltip-text'>30 Frilldora</p>
+						<p class='tooltip-text'>45 Hode</p>
+						<p class='tooltip-text'>20 Metaller</p>
+						<p class='tooltip-text'>30 Piere</p>
+						<p class='tooltip-text'>45 Sandman</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+
+		<div class='maps moc_fild16'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>moc_fild16</a>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>moc_fild16</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class=''>
+						<p class='tooltip-text'>50 Hode</p>	
+						<p class='tooltip-text'>15 Metaller</p>
+						<p class='tooltip-text'>25 Muka</p>
+						<p class='tooltip-text'>70 Sandman</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+
+		<div class='maps pay_fild05 indent-3maps portal-right'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>pay_fild05</a>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>pay_fild05</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class=''>
+						<p class='tooltip-text'>8 Green Plant</p>	
+						<p class='tooltip-text'>10 Boa</p>
+						<p class='tooltip-text'>15 Poison Spore	</p>
+						<p class='tooltip-text'>30 Poporing</p>
+						<p class='tooltip-text'>65 Spore</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+
+		<div class='maps pay_fild06'>
+			<div class='overlay'>
+				<a href='#' class='field-name'>pay_fild06</a>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>pay_fild06</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class=''>
+						<p class='tooltip-text'>8 Red Mushroom</p>	
+						<p class='tooltip-text'>10 Green Plant</p>
+						<p class='tooltip-text'>1 Shining Plant</p>
+						<p class='tooltip-text'>20 Fabre</p>
+						<p class='tooltip-text'>15 Lunatic</p>
+						<p class='tooltip-text'>30 Poring</p>	
+						<p class='tooltip-text'>10 Pupa</p>
+						<p class='tooltip-text'>55 Roda Frog</p>
+						<p class='tooltip-text'>40 Spore</p>
+						<p class='tooltip-text'>45 Willow</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+		
+		<div class='maps tur_dun01 indent-1p5 turtle-island'>
+			<div class='overlay'>
+				<a href='#' class='field-name-small'>Turtle Island</a>
+				
+				<div class='map-indicators'>
+					<div class='dungeon-icon'></div>
+				</div>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>tur_dun01</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class='bgblue'>
+						<p class='tooltip-text'>Turtle Dungeon</p>
+						</div>
+						<div class=''>
+						<p class='tooltip-text'>25 Dragon Tail</p>	
+						<p class='tooltip-text'>10 Permeter</p>
+						<p class='tooltip-text'>15 Pest</p>
+						<p class='tooltip-text'>25 Spring Rabbit</p>
+						<p class='tooltip-text'>10 Thara Frog</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</div>	
+													
+
+</div>
+
+<!-- SECOND HALF --> <!-- SECOND HALF --> <!-- SECOND HALF --> <!-- SECOND HALF --> <!-- SECOND HALF -->
+
+<div class='section-container-2' id='dungeon-window'>
+
+	<div class='section'>
+	<!--
+	<div class='section-2-tab' onclick='showDungeon()'>qwe</div>
+	-->
+		<div class='maps yuno juno indent-7maps portal-bottom'>
+			<div class='overlay'>
+				<a href='#' class='town-name'>Juno</a>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+		
+		<div class='maps yuno_fild06 portal-bottom'>
+			<div class='overlay'>
+				<a class='field-name-small'>yuno_fild06</a>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>yuno_fild06</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class=''>
+						<p class='tooltip-text'>10 Green Plant</p>
+						<p class='tooltip-text'>10 Red Plant</p>
+						<p class='tooltip-text'>10 Yellow Plant</p>
+						<p class='tooltip-text'>20 Demon Pungus</p>
+						<p class='tooltip-text'>40 Goat</p>
+						<p class='tooltip-text'>70 Sleeper</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+	
+
+	</div>	
 													
 
 </div>
