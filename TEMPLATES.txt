@@ -6,15 +6,48 @@
 
 	<div class='section'>
 	
-		<div class='maps yuno portal-bottom'>
+		<div class='maps portal-bottom portal-right'>
 			<div class='overlay'>
-				<a href='#' class='town-name'>Juno</a>
+				<a href='#' class='field-name'>Juno</a>
 			</div>
 		</div>
 		
 <!-- MAP DIVIDER -->
 		
 	</div>	
+	
+### DUNGEONS
+
+	<div class='section-d'>
+
+		<div class='dungeon-cont'>
+			<p class='dungeon-caption'>Aldebaran<br/>Dungeon</p>	
+		</div>
+	
+		<div class='wmd maps XXX'>
+			<div class='overlay'>
+				<a href='#' class='dungeon-name-sf'>XXX</a>
+				
+				<div class='tooltip'>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>XXX</p>
+					</div>
+					<div class='tooltip-body'>
+						<div class=''>
+						<p class='tooltip-text'>1 Monster</p>	
+						<p class='tooltip-text'>2 Monster</p>
+						<p class='tooltip-text'>3 Monster</p>
+						<p class='tooltip-text'>4 Monster</p>
+						<p class='tooltip-text'>5 Monster</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+<!-- MAP DIVIDER -->
+
+	</div>
 
 ###MAP ICONS
 				<div class='map-indicators'>
@@ -31,15 +64,16 @@
 				
 ###MONSTER COUNT 
 				<div class='tooltip'>
-					<div class='tooltip-header'></div>
+					<div class='tooltip-header'><span class='header-icon'></span>
+					<p class='tooltip-text'>XXXX</p>
+					</div>
 					<div class='tooltip-body'>
 						<div class=''>
-						<p class='tooltip-text'>10 Green Plant</p>
-						<p class='tooltip-text'>10 Red Plant</p>
-						<p class='tooltip-text'>10 Yellow Plant</p>
-						<p class='tooltip-text'>20 Demon Pungus</p>
-						<p class='tooltip-text'>40 Goat</p>
-						<p class='tooltip-text'>70 Sleeper</p>
+						<p class='tooltip-text'>1 Monster</p>	
+						<p class='tooltip-text'>2 Monster</p>
+						<p class='tooltip-text'>3 Monster</p>
+						<p class='tooltip-text'>4 Monster</p>
+						<p class='tooltip-text'>5 Monster</p>
 						</div>
 					</div>
 				</div>
@@ -55,3 +89,24 @@
 				</div>
 				
 -->
+
+aldebaran dungeon
+ant hell
+beach dungeon
+clock tower
+coal mines
+geffen dungeon
+glast heim
+guild dungeon
+izlude dungeon
+magma dungeon
+orc dungeon
+payon cave
+prontera culvert
+prontera maze
+pvp room
+pyramid dungeon
+sphinx dungeon
+sunken ship
+toy factory
+turtle island

@@ -5,25 +5,62 @@ html {
 body {
 	margin:0;
 	padding:0;
+	background:url("maps/etc/prt.jpg")no-repeat fixed center;
+	background-size:cover;
+	font-family:sans-serif;
 }
 
 /* CONTAINERS */
+
 .inner-body {
 	display:flex;
 	justify-content:center;
-	align-items:center;
-	border:1px solid green;
+	position:relative;
+	height:1200px;
+	background:rgba(0,0,0,.4);
 }
 
-.section-container {
-	width:100%;height:100%;
-	border:1px solid blue;
+.section-container-1 {
+	width:auto;height:auto;
+	position:absolute;
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
+	align-items:center;
+	margin-top:50px;
+	margin-bottom:25px;
+	background-size:cover;
+	display:none; /* INTERCHANGE WITH TOWN ONCE DUNGEON IS FINISHED */
+}
+
+.section-container-2 {
+	width:auto;height:auto;
+	position:absolute;
+	display:flex;
+	flex-direction:column;
+	justify-content:flex-start;
+	align-items:center;
+	margin-top:50px;
+	margin-bottom:25px;
+	background-size:cover;
+	display:block;
 }
 
 .section {
 	display:flex;
-	height:60px;
-	
+	width:auto;height:60px;
+}
+
+.section-d {
+	display:flex;
+	width:auto;height:80px;
+}
+
+.dungeon-cont {
+	display:flex;
+	text-align:center;
+	align-items:center;
+	width:auto;height:60px;
 }
 /* CONTAINERS */
 
@@ -44,12 +81,55 @@ body {
     top:23px;
 }
 
+.portal-right-d:before {
+	content:'';
+    width:4px;height:10px;
+    background:#aaaaaa;
+    position:absolute;
+    right:-4px;
+    top:23px;
+}
+
 .portal-bottom:after {
 	content:'';
     width:10px;height:4px;
     background:#222;
     position:absolute;
     bottom:-4px;left:23px;
+}
+
+.portal-bottom-long:after {
+	content:'';
+    width:10px;height:64px;
+    background:#222;
+    position:absolute;
+    bottom:-64px;left:23px;
+	opacity:.7;
+}
+
+.portal-bl:before {
+	content:'';
+    width:10px;height:4px;
+    background:#222;
+    position:absolute;
+    bottom:-4px;left:8px;
+}
+
+.portal-br:after {
+	content:'';
+    width:10px;height:4px;
+    background:#222;
+    position:absolute;
+    bottom:-4px;right:8px;
+}
+
+.portal-angle:before {
+	content:'';
+    width:10px;height:4px;
+    background:#222;
+    position:absolute;
+    bottom:-4px;right:-7px;
+	transform:rotate(45deg);
 }
 
 .overlay {
@@ -59,11 +139,12 @@ body {
 	display:flex;
 	flex-direction:column;
 	align-items:space-around;
-	justify-content:center;
+	justify-content:space-between;
 }
 
 .overlay:hover{
 	box-shadow:0 0 15px yellow inset;
+	cursor: url('cursor/qmc.png'), auto;
 }
 
 		.overlay:hover .tooltip {
@@ -73,7 +154,7 @@ body {
 a {
 	text-decoration:none;
 	cursor: url('cursor/linkc.png'), auto;
-	text-shadow: 0px 0px 3px #000, 0px 0px 2px #000, 0px 0px 1px #000;
+	text-shadow: 0px 0px 4px #000, 0px 0px 3px #000, 0px 0px 2px #000, 0px 0px 1px #000;
 }
 a:active {cursor: url('cursor/activec.png'), auto;}
 
@@ -84,30 +165,79 @@ a:active {cursor: url('cursor/activec.png'), auto;}
 	color:#000;
 }
 
+.castle-name {
+	font-size:12px;
+	text-align:center;
+	color:#ff00ff;
+	margin:2px 0 0 0;
+}
+
+.castle-name-small {
+	font-size:10px;
+	text-align:center;
+	color:#ff00ff;
+	margin:2px 0 0 0;
+}
+
 .town-name {
-	font-family:sans-serif;
 	font-size:12px;
 	text-align:center;
 	color:yellow;
-	margin:0;
+	margin:2px 0 0 0;
+}
+.field-name-small {
+	text-align:center;
+	font-size:10px;
+	color:white;
+	margin:2px 0 0 0;
 }
 
 .field-name {
-	font-family:sans-serif;
 	text-align:center;
-	font-size:12px;
+	font-size:11px;
 	color:white;
-	margin:0;
+	margin:2px 0 0 0;
+}
+
+.dungeon-caption {
+	text-shadow: 0px 0px 4px #000, 0px 0px 3px #000;
+	text-align:center;
+	font-size:15px;
+	font-weight:bold;
+	color:#66b3ff;
+}
+
+.dungeon-name {
+	text-align:center;
+	font-size:11px;
+	color:powderblue;
+	margin:2px 0 0 0;
+}
+
+.dungeon-name-sf {
+	text-align:center;
+	font-size:10px;
+	color:powderblue;
+	margin:2px 0 0 0;
 }
 
 .tooltip-text {
-	font-family:sans-serif;
 	text-align:left;
 	font-size:12px;
+	padding:0 0 0 3px;
 	margin:0;
-	text-indent:3px;
+	cursor: url('cursor/linkc.png'), auto;
 }
+
+.tooltip-text-search {
+	text-align:left;
+	font-size:12px;
+	padding:0 0 0 3px;
+	margin:0;
+}
+
 .tooltip-text:hover {background:#ffe4b3;}
+.tooltip-text:active {cursor: url('cursor/activec.png'), auto;}
 
 /* STANDARD ELEMENTS */
 
@@ -115,6 +245,7 @@ a:active {cursor: url('cursor/activec.png'), auto;}
 .map-indicators {
 	display:flex;
 	justify-content:space-around;
+	margin-bottom:5px;
 }
 
 .boss-icon {
@@ -144,7 +275,7 @@ a:active {cursor: url('cursor/activec.png'), auto;}
 .dungeon-icon {
 	width:10px;height:10px;
     border-radius:50%;
-    background:linear-gradient(white 1%, blue 70%, white 110%);
+    background:linear-gradient(white 1%, dodgerblue 70%, white 110%);
     position:relative;
 	cursor: url('cursor/qmc.png'), auto;
 }
@@ -152,16 +283,28 @@ a:active {cursor: url('cursor/activec.png'), auto;}
 			display:block;
 		}
 		.dungeon-icon:active {cursor: url('cursor/activec.png'), auto;}
+		
+@keyframes blink {
+	from {box-shadow:0 0 50px cyan inset;}
+    to {box-shadow:0 0 50px transparent inset;}
+}
 /* MAP INDICATORS */
 
 /* TOOLTIPS */
 .tooltip {
-	width:110px;
-	
+	width:115px;
     display:none;
     z-index:1;
     position:absolute;
-    left:50px;top:50px;
+    left:45px;top:45px;
+}
+
+.tooltip-fixed {
+	width:auto;height:auto;
+    display:block;
+	position:fixed;
+    left:5px;top:5px;
+	z-index:1;
 }
 
 .tooltip-header {
@@ -170,26 +313,126 @@ a:active {cursor: url('cursor/activec.png'), auto;}
     border-top-left-radius:5px;
     border-top-right-radius:5px;
     border:1px solid #adc1eb;
-    z-index:1;
+	display:flex;
+	align-items:center;
+	position:relative;
 }
+	.header-icon {
+		display:inline-block;
+		width:8px;height:8px;
+		border:1px solid #4673d2;
+		border-radius:50%;
+		margin-left:2px;
+		background:linear-gradient(white 1%, rgb(91, 130, 215) 70%, white 110%);
+	}
+
 .tooltip-body {
 	border:1px solid gray;
 	border-top:1px solid transparent;
 	border-bottom-left-radius:3px;
 	border-bottom-right-radius:3px;
-    width:100%;
-    z-index:1;
+    width:100%;height:auto;
     background:white;
 	text-align:center;
 }
 
 .bgred {background:rgb(255, 128, 128)}
 .bgpink {background:rgb(255, 204, 213)}
-.bgblue {background:rgb(204, 204, 255)}
+.bgblue {background:#99ccff}
+.bgviolet {background:#ffb3ff}
+hr {margin:0}
+
+.center {
+	text-align:center;
+	margin:0;
+}
+
+.margin-left-5 {margin-left:5px;}
+.margin-bottom-5 {margin-bottom:5px;}
+.margin-5 {margin:5px;}
 /* TOOLTIPS */
+
+/* SEARCH */
+#inputValue {
+	animation: search 1s linear infinite alternate;
+}
+
+	@keyframes search {
+		from {box-shadow: 0 0 7px transparent}
+		to {box-shadow: 0 0 10px yellow}
+	}
+	
+#inputValue:focus {
+	animation:none;
+	box-shadow: 0 0 12px #99ccff;
+}
+
+.flex-column {
+	display:flex;
+	flex-direction:column;
+	border-top:gray
+}
+iframe {
+	border:none;
+}
+
+input {
+	border:1px solid gray;
+	width:90%;
+	display:block;
+	margin:auto;
+	margin-top:5px;
+	margin-bottom:5px;
+}
+
+.button {
+	background:linear-gradient(white 1%, rgb(217, 217, 217) 80%, white 110%);
+	border:1px solid #bbbbbb;
+	border-radius:7px;
+	padding:2px 5px;
+	cursor: url('cursor/linkc.png'), auto;
+	color:#3c3c3c;
+	width:150px;
+	display:block;
+	margin:auto;
+	margin-bottom:5px;
+}
+
+.button:hover {
+	background:linear-gradient(white 1%, rgb(173, 193, 235) 20%, white 110%);
+	box-shadow:0 0 8px #809fff;
+}
+
+.button:active {
+	cursor: url('cursor/activec.png'), auto;
+}
+/* SEARCH */
 
 /* OTHER CODES */
 .center {text-align:center;}
+
+	/* MAP INDENTS */
+	.indent-top {margin-top: 32px;}
+	.indent-top2 {margin-top: 62px;}
+	.indent-half {margin-left: 32px;}
+	.indent-third {margin-left: 39.5px;}
+	.indent-one {margin-left:62px}
+	.indent-1p5 {margin-left: 92px;}
+	.indent-2maps {margin-left: 122px;}
+	.indent-2p5 {margin-left: 152px;}
+	.indent-3maps {margin-left: 182px;}
+	.indent-3p5 {margin-left: 212px;}
+	.indent-4maps {margin-left: 242px;}
+	.indent-4p5 {margin-left: 272px;}
+	.indent-5maps {margin-left: 302px;}
+	.indent-5p5 {margin-left: 332px;}
+	.indent-6maps {margin-left: 362px;}
+	.indent-7maps {margin-left: 422px;}
+	.indent-8maps {margin-left: 482px;}
+	.indent-10maps {margin-left: 602px;}
+	.indent-11maps {margin-left: 662px;}
+	/* MAP INDENTS */
+	
 /* OTHER CODES */
 
 /* MAPS REQUEST */
@@ -243,4 +486,212 @@ a:active {cursor: url('cursor/activec.png'), auto;}
 .mjolnir_03{background-image: url(maps/56px/mjolnir_03.png);}
 .mjolnir_04{background-image: url(maps/56px/mjolnir_04.png);}
 .mjolnir_05{background-image: url(maps/56px/mjolnir_05.png);}
+
+.glast_01{background-image: url(maps/56px/glast_01.png);}
+.gef_fild06{background-image: url(maps/56px/gef_fild06.png);}
+.gef_fild05{background-image: url(maps/56px/gef_fild05.png);}
+.gef_fild04{background-image: url(maps/56px/gef_fild04.png);}
+.mjolnir_06{background-image: url(maps/56px/mjolnir_06.png);}
+.mjolnir_07{background-image: url(maps/56px/mjolnir_07.png);}
+.mjolnir_08{background-image: url(maps/56px/mjolnir_08.png);}
+.mjolnir_10{background-image: url(maps/56px/mjolnir_10.png);}
+.mjolnir_11{background-image: url(maps/56px/mjolnir_11.png);}
+
+.nif_fild01{background-image: url(maps/56px/nif_fild01.png);}
+.nif_fild02{background-image: url(maps/56px/nif_fild02.png);}
+.niflheim{background-image: url(maps/56px/niflheim.png);}
+.gef_fild08{background-image: url(maps/56px/gef_fild08.png);}
+.gef_fild07{background-image: url(maps/56px/gef_fild07.png);}
+.geffen{background-image: url(maps/56px/geffen.png);}
+.gef_fild00{background-image: url(maps/56px/gef_fild00.png);}
+.prt_fild00{background-image: url(maps/56px/prt_fild00.png);}
+.mjolnir_09{background-image: url(maps/56px/mjolnir_09.png);}
+.prt_fild01{background-image: url(maps/56px/prt_fild01.png);}
+.prt_fild02{background-image: url(maps/56px/prt_fild02.png);}
+.prt_fild03{background-image: url(maps/56px/prt_fild03.png);}
+.prt_monk{background-image: url(maps/56px/prt_monk.png);}
+
+.prt_gld{background-image: url(maps/56px/prt_gld.png);}
+
+.gef_fild12{background-image: url(maps/56px/gef_fild12.png);}
+.gef_fild13{background-image: url(maps/56px/gef_fild13.png);}
+.gef_fild09{background-image: url(maps/56px/gef_fild09.png);}
+.gef_fild01{background-image: url(maps/56px/gef_fild01.png);}
+.prt_fild04{background-image: url(maps/56px/prt_fild04.png);}
+.prt_fild05{background-image: url(maps/56px/prt_fild05.png);}
+.prontera{background-image: url(maps/56px/prontera.png);}
+.prt_fild06{background-image: url(maps/56px/prt_fild06.png);}
+.izlu2dun{background-image: url(maps/56px/izlu2dun.png);}
+
+.umbala{background-image: url(maps/56px/umbala.png);}
+.gef_fild14{background-image: url(maps/56px/gef_fild14.png);}
+.gef_fild10{background-image: url(maps/56px/gef_fild10.png);}
+.gef_fild03{background-image: url(maps/56px/gef_fild03.png);}
+.gef_fild02{background-image: url(maps/56px/gef_fild02.png);}
+.prt_fild07{background-image: url(maps/56px/prt_fild07.png);}
+.prt_fild08{background-image: url(maps/56px/prt_fild08.png);}
+.izlude{background-image: url(maps/56px/izlude.png);}
+
+.um_fild04{background-image: url(maps/56px/um_fild04.png);}
+.gef_fild11{background-image: url(maps/56px/gef_fild11.png);}
+.prt_fild11{background-image: url(maps/56px/prt_fild11.png);}
+.prt_fild10{background-image: url(maps/56px/prt_fild10.png);}
+.prt_fild09{background-image: url(maps/56px/prt_fild09.png);}
+.moc_fild01{background-image: url(maps/56px/moc_fild01.png);}
+.pay_fild04{background-image: url(maps/56px/pay_fild04.png);}
+.pay_arche{background-image: url(maps/56px/pay_arche.png);}
+
+.um_fild01{background-image: url(maps/56px/um_fild01.png);}
+.um_fild02{background-image: url(maps/56px/um_fild02.png);}
+.um_fild03{background-image: url(maps/56px/um_fild03.png);}
+.moc_ruins{background-image: url(maps/56px/moc_ruins.png);}
+.moc_fild07{background-image: url(maps/56px/moc_fild07.png);}
+.moc_fild06{background-image: url(maps/56px/moc_fild06.png);}
+.moc_fild05{background-image: url(maps/56px/moc_fild05.png);}
+.moc_fild04{background-image: url(maps/56px/moc_fild04.png);}
+.moc_fild02{background-image: url(maps/56px/moc_fild02.png);}
+.pay_gld{background-image: url(maps/56px/pay_gld.png);}
+.payon{background-image: url(maps/56px/payon.png);}
+.pay_fild08{background-image: url(maps/56px/pay_fild08.png);}
+.pay_fild09{background-image: url(maps/56px/pay_fild09.png);}
+
+.cmd_fild01{background-image: url(maps/56px/cmd_fild01.png);}
+.cmd_fild03{background-image: url(maps/56px/cmd_fild03.png);}
+.moc_fild19{background-image: url(maps/56px/moc_fild19.png);}
+.morocc{background-image: url(maps/56px/morocc.png);}
+.moc_fild10{background-image: url(maps/56px/moc_fild10.png);}
+.moc_fild09{background-image: url(maps/56px/moc_fild09.png);}
+.moc_fild08{background-image: url(maps/56px/moc_fild08.png);}
+.moc_fild13{background-image: url(maps/56px/moc_fild13.png);}
+.moc_fild03{background-image: url(maps/56px/moc_fild03.png);}
+.pay_fild01{background-image: url(maps/56px/pay_fild01.png);}
+.pay_fild07{background-image: url(maps/56px/pay_fild07.png);}
+.pay_fild10{background-image: url(maps/56px/pay_fild10.png);}
+.alb2trea{background-image: url(maps/56px/alb2trea.png);}
+
+.comodo{background-image: url(maps/56px/comodo.png);}
+.cmd_fild02{background-image: url(maps/56px/cmd_fild02.png);}
+.cmd_fild04{background-image: url(maps/56px/cmd_fild04.png);}
+.cmd_fild06{background-image: url(maps/56px/cmd_fild06.png);}
+.cmd_fild08{background-image: url(maps/56px/cmd_fild08.png);}
+.moc_fild12{background-image: url(maps/56px/moc_fild12.png);}
+.moc_fild11{background-image: url(maps/56px/moc_fild11.png);}
+.moc_fild15{background-image: url(maps/56px/moc_fild15.png);}
+.moc_fild14{background-image: url(maps/56px/moc_fild14.png);}
+.pay_fild11{background-image: url(maps/56px/pay_fild11.png);}
+.pay_fild02{background-image: url(maps/56px/pay_fild02.png);}
+.pay_fild03{background-image: url(maps/56px/pay_fild03.png);}
+.alberta{background-image: url(maps/56px/alberta.png);}
+.tur_dun01{background-image: url(maps/56px/tur_dun01.png);}
+
+.cmd_fild07{background-image: url(maps/56px/cmd_fild07.png);}
+.cmd_fild09{background-image: url(maps/56px/cmd_fild09.png);}
+.moc_fild18{background-image: url(maps/56px/moc_fild18.png);}
+.moc_fild17{background-image: url(maps/56px/moc_fild17.png);}
+.moc_fild16{background-image: url(maps/56px/moc_fild16.png);}
+.pay_fild05{background-image: url(maps/56px/pay_fild05.png);}
+.pay_fild06{background-image: url(maps/56px/pay_fild06.png);}
 /* MAPS REQUEST */
+
+/* DUNGEONS REQUEST */
+.wmd{background-size:cover} /* wmd = world-map-dungeons */
+.wmd:hover{box-shadow:0 0 15px red inset;} /* wmd = world-map-dungeons */
+
+.alde_dun01{background-image: url(maps/dungeons/alde_dun01.png);}
+.alde_dun02{background-image: url(maps/dungeons/alde_dun02.png);}
+.alde_dun03{background-image: url(maps/dungeons/alde_dun03.png);}
+.alde_dun04{background-image: url(maps/dungeons/alde_dun04.png);}
+
+.anthell01{background-image: url(maps/dungeons/anthell01.png);}
+.anthell02{background-image: url(maps/dungeons/anthell02.png);}
+
+.beach_dun{background-image: url(maps/dungeons/beach_dun.png);}
+.beach_dun2{background-image: url(maps/dungeons/beach_dun2.png);}
+.beach_dun3{background-image: url(maps/dungeons/beach_dun3.png);}
+
+.c_tower1{background-image: url(maps/dungeons/c_tower1.png);}
+.c_tower2{background-image: url(maps/dungeons/c_tower2.png);}
+.c_tower3{background-image: url(maps/dungeons/c_tower3.png);}
+.c_tower4{background-image: url(maps/dungeons/c_tower4.png);}
+
+.gef_dun00{background-image: url(maps/dungeons/gef_dun00.png);}
+.gef_dun01{background-image: url(maps/dungeons/gef_dun01.png);}
+.gef_dun02{background-image: url(maps/dungeons/gef_dun02.png);}
+
+.gl_cas01{background-image: url(maps/dungeons/gl_cas01.png);}
+.gl_cas02{background-image: url(maps/dungeons/gl_cas02.png);}
+.gl_church{background-image: url(maps/dungeons/gl_church.png);}
+.gl_chyard{background-image: url(maps/dungeons/gl_chyard.png);}
+.gl_dun01{background-image: url(maps/dungeons/gl_dun01.png);}
+.gl_dun02{background-image: url(maps/dungeons/gl_dun02.png);}
+.gl_in01{background-image: url(maps/dungeons/gl_in01.png);}
+.gl_knt01{background-image: url(maps/dungeons/gl_knt01.png);}
+.gl_knt02{background-image: url(maps/dungeons/gl_knt02.png);}
+.gl_prison{background-image: url(maps/dungeons/gl_prison.png);}
+.gl_prison1{background-image: url(maps/dungeons/gl_prison1.png);}
+.gl_sew01{background-image: url(maps/dungeons/gl_sew01.png);}
+.gl_sew02{background-image: url(maps/dungeons/gl_sew02.png);}
+.gl_sew03{background-image: url(maps/dungeons/gl_sew03.png);}
+.gl_sew04{background-image: url(maps/dungeons/gl_sew04.png);}
+.gl_step{background-image: url(maps/dungeons/gl_step.png);}
+
+.gld_dun01{background-image: url(maps/dungeons/gld_dun01.png);}
+.gld_dun02{background-image: url(maps/dungeons/gld_dun02.png);}
+.gld_dun03{background-image: url(maps/dungeons/gld_dun03.png);}
+.gld_dun04{background-image: url(maps/dungeons/gld_dun04.png);}
+
+.in_sphinx1{background-image: url(maps/dungeons/in_sphinx1.png);}
+.in_sphinx2{background-image: url(maps/dungeons/in_sphinx2.png);}
+.in_sphinx3{background-image: url(maps/dungeons/in_sphinx3.png);}
+.in_sphinx4{background-image: url(maps/dungeons/in_sphinx4.png);}
+.in_sphinx5{background-image: url(maps/dungeons/in_sphinx5.png);}
+
+.iz_dun00{background-image: url(maps/dungeons/iz_dun00.png);}
+.iz_dun01{background-image: url(maps/dungeons/iz_dun01.png);}
+.iz_dun02{background-image: url(maps/dungeons/iz_dun02.png);}
+.iz_dun03{background-image: url(maps/dungeons/iz_dun03.png);}
+.iz_dun04{background-image: url(maps/dungeons/iz_dun04.png);}
+
+.mag_dun01{background-image: url(maps/dungeons/mag_dun01.png);}
+.mag_dun02{background-image: url(maps/dungeons/mag_dun02.png);}
+
+.mjo_dun01{background-image: url(maps/dungeons/mjo_dun01.png);}
+.mjo_dun02{background-image: url(maps/dungeons/mjo_dun02.png);}
+.mjo_dun03{background-image: url(maps/dungeons/mjo_dun03.png);}
+
+.moc_pryd01{background-image: url(maps/dungeons/moc_pryd01.png);}
+.moc_pryd02{background-image: url(maps/dungeons/moc_pryd02.png);}
+.moc_pryd03{background-image: url(maps/dungeons/moc_pryd03.png);}
+.moc_pryd04{background-image: url(maps/dungeons/moc_pryd04.png);}
+.moc_pryd05{background-image: url(maps/dungeons/moc_pryd05.png);}
+.moc_pryd06{background-image: url(maps/dungeons/moc_pryd06.png);}
+
+.orcsdun01{background-image: url(maps/dungeons/orcsdun01.png);}
+.orcsdun02{background-image: url(maps/dungeons/orcsdun02.png);}
+
+.pay_dun00{background-image: url(maps/dungeons/pay_dun00.png);}
+.pay_dun01{background-image: url(maps/dungeons/pay_dun01.png);}
+.pay_dun02{background-image: url(maps/dungeons/pay_dun02.png);}
+.pay_dun03{background-image: url(maps/dungeons/pay_dun03.png);}
+.pay_dun04{background-image: url(maps/dungeons/pay_dun04.png);}
+
+.prt_maze01{background-image: url(maps/dungeons/prt_maze01.png);}
+.prt_maze02{background-image: url(maps/dungeons/prt_maze02.png);}
+.prt_maze03{background-image: url(maps/dungeons/prt_maze03.png);}
+
+.prt_sewb1{background-image: url(maps/dungeons/prt_sewb1.png);}
+.prt_sewb2{background-image: url(maps/dungeons/prt_sewb2.png);}
+.prt_sewb3{background-image: url(maps/dungeons/prt_sewb3.png);}
+.prt_sewb4{background-image: url(maps/dungeons/prt_sewb4.png);}
+
+.treasure01{background-image: url(maps/dungeons/treasure01.png);}
+.treasure02{background-image: url(maps/dungeons/treasure02.png);}
+
+.tur_dun01{background-image: url(maps/dungeons/tur_dun01.png);}
+.tur_dun02{background-image: url(maps/dungeons/tur_dun02.png);}
+.tur_dun03{background-image: url(maps/dungeons/tur_dun03.png);}
+.tur_dun04{background-image: url(maps/dungeons/tur_dun04.png);}
+
+.xmas_dun01{background-image: url(maps/dungeons/xmas_dun01.png);}
+.xmas_dun02{background-image: url(maps/dungeons/xmas_dun02.png);}
+/* DUNGEONS REQUEST */
