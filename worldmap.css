@@ -30,7 +30,7 @@ body {
 	margin-top:50px;
 	margin-bottom:25px;
 	background-size:cover;
-	display:none; /* INTERCHANGE WITH TOWN ONCE DUNGEON IS FINISHED */
+	display:block;
 }
 
 .section-container-2 {
@@ -43,7 +43,7 @@ body {
 	margin-top:50px;
 	margin-bottom:25px;
 	background-size:cover;
-	display:block;
+	display:none;
 }
 
 .section {
@@ -150,6 +150,9 @@ body {
 		.overlay:hover .tooltip {
 			display:block;
 		}
+		.overlay:hover .tooltip-bottom {
+			display:block;
+		}
 
 a {
 	text-decoration:none;
@@ -207,6 +210,14 @@ a:active {cursor: url('cursor/activec.png'), auto;}
 	color:#66b3ff;
 }
 
+.guild-dungeon-caption {
+	text-shadow: 0px 0px 4px #000, 0px 0px 3px #000;
+	text-align:center;
+	font-size:15px;
+	font-weight:bold;
+	color:#ff00ff;
+}
+
 .dungeon-name {
 	text-align:center;
 	font-size:11px;
@@ -224,9 +235,10 @@ a:active {cursor: url('cursor/activec.png'), auto;}
 .tooltip-text {
 	text-align:left;
 	font-size:12px;
-	padding:0 0 0 3px;
+	padding:1px 3px 1px 3px;
 	margin:0;
 	cursor: url('cursor/linkc.png'), auto;
+	white-space:nowrap;
 }
 
 .tooltip-text-search {
@@ -281,7 +293,7 @@ a:active {cursor: url('cursor/activec.png'), auto;}
 }
 		.dungeon-icon:hover .tooltip {
 			display:block;
-		}
+		}		
 		.dungeon-icon:active {cursor: url('cursor/activec.png'), auto;}
 		
 @keyframes blink {
@@ -292,11 +304,19 @@ a:active {cursor: url('cursor/activec.png'), auto;}
 
 /* TOOLTIPS */
 .tooltip {
-	width:115px;
+	width:auto;
     display:none;
     z-index:1;
     position:absolute;
     left:45px;top:45px;
+}
+
+.tooltip-bottom {
+	width:auto;
+    display:none;
+    z-index:1;
+    position:absolute;
+    left:45px;bottom:45px;
 }
 
 .tooltip-fixed {
@@ -410,12 +430,14 @@ input {
 
 /* OTHER CODES */
 .center {text-align:center;}
+.flex {display:flex}
 
 	/* MAP INDENTS */
 	.indent-top {margin-top: 32px;}
 	.indent-top2 {margin-top: 62px;}
 	.indent-half {margin-left: 32px;}
 	.indent-third {margin-left: 39.5px;}
+	
 	.indent-one {margin-left:62px}
 	.indent-1p5 {margin-left: 92px;}
 	.indent-2maps {margin-left: 122px;}
@@ -431,6 +453,11 @@ input {
 	.indent-8maps {margin-left: 482px;}
 	.indent-10maps {margin-left: 602px;}
 	.indent-11maps {margin-left: 662px;}
+	
+	.indent-special {margin-left: 45px;}
+	
+	.align-beach {margin-left: 9px;}
+	.align-clock {margin-left: 20px;}
 	/* MAP INDENTS */
 	
 /* OTHER CODES */
@@ -687,7 +714,6 @@ input {
 .treasure01{background-image: url(maps/dungeons/treasure01.png);}
 .treasure02{background-image: url(maps/dungeons/treasure02.png);}
 
-.tur_dun01{background-image: url(maps/dungeons/tur_dun01.png);}
 .tur_dun02{background-image: url(maps/dungeons/tur_dun02.png);}
 .tur_dun03{background-image: url(maps/dungeons/tur_dun03.png);}
 .tur_dun04{background-image: url(maps/dungeons/tur_dun04.png);}
